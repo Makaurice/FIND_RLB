@@ -1,0 +1,6 @@
+[00:01:28.166] Server  LOG     
+[00:01:28.167] Server  LOG       We detected TypeScript in your project and created a tsconfig.json file for you.
+[00:01:49.247] Server  LOG     ✓ Ready in 89.8s
+[00:01:52.500] Server  LOG     ○ Compiling / ...
+[00:03:52.039] Server  LOG     ✓ Finished writing to filesystem cache in 44s
+[00:03:52.041] Server  LOG     ○ Compiling /login ...

@@ -40,9 +40,10 @@ contract PropertyNFT {
         emit OwnershipTransferred(propertyId, oldOwner, newOwner);
     }
 
+    mapping(uint256 => bool) public isLocked;
     function lockDuringLease(uint256 propertyId) public {
         require(properties[propertyId].owner == msg.sender, "Not property owner");
-        // Lock logic placeholder
+        isLocked[propertyId] = true;
         emit LockedDuringLease(propertyId);
     }
 }

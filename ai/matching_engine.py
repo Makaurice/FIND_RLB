@@ -6,16 +6,27 @@ Matches tenants & properties, predicts compatibility, uses on-chain reputation.
 
 class MatchingEngineAgent:
     def __init__(self):
-        pass
+        self.match_history = []
 
     def match(self, tenants, properties):
-        # Placeholder: Match tenants to properties
-        return [(tenants[0], properties[0])] if tenants and properties else []
+        # Match tenants to properties by budget (simple greedy match)
+        matches = []
+        for tenant in tenants:
+            suitable = [p for p in properties if p.get('price', 0) <= tenant.get('budget', 0)]
+            if suitable:
+                matches.append((tenant, suitable[0]))
+                self.match_history.append((tenant, suitable[0]))
+        return matches
 
     def predict_compatibility(self, tenant, property_):
-        # Placeholder: Predict compatibility score
-        return 0.85
+        # Predict compatibility based on location and type match
+        score = 0.5
+        if tenant.get('preferred_location') == property_.get('location'):
+            score += 0.25
+        if tenant.get('preferred_type') == property_.get('type'):
+            score += 0.25
+        return score
 
     def use_onchain_reputation(self, tenant):
-        # Placeholder: Use on-chain reputation
-        return 0.9
+        # Return a dummy on-chain reputation score (simulate)
+        return tenant.get('onchain_reputation', 0.8)

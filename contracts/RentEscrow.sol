@@ -21,9 +21,10 @@ contract RentEscrow {
         emit RentPaid(leaseId, msg.sender, msg.value, nextPaymentDue[leaseId]);
     }
 
+    uint public penaltyAmount = 10;
     function chargeLatePenalty(uint leaseId) external {
         require(block.timestamp > nextPaymentDue[leaseId], "Not overdue");
-        latePenalty[leaseId] += 10; // Example: add 10 units penalty
+        latePenalty[leaseId] += penaltyAmount;
         emit ReminderEvent(leaseId, leaseToTenant[leaseId], nextPaymentDue[leaseId]);
         emit ReputationUpdated(leaseToTenant[leaseId], -1);
     }

@@ -9,17 +9,25 @@ class TenantAIAgent:
         self.user_profile = user_profile
 
     def learn_preferences(self, data):
-        # Placeholder: Learn from data
-        pass
+        # Learn preferences by updating user profile with new data
+        self.user_profile.update(data)
+        return self.user_profile
 
     def recommend_home(self, properties):
-        # Placeholder: Recommend best home
-        return properties[0] if properties else None
+        # Recommend the property with the lowest price as a simple heuristic
+        if not properties:
+            return None
+        return min(properties, key=lambda p: p.get('price', float('inf')))
 
     def suggest_negotiation(self, property_info):
-        # Placeholder: Suggest negotiation strategy
-        return "Offer 5% below asking price."
+        # Suggest a negotiation strategy based on price
+        price = property_info.get('price', 0)
+        suggested = price * 0.95
+        return f"Suggest offering ${suggested:.2f} (5% below asking price)"
 
     def savings_plan(self, target_amount, current_savings):
-        # Placeholder: Suggest savings plan
-        return (target_amount - current_savings) / 12
+        # Suggest a 12-month savings plan
+        months = 12
+        if target_amount <= current_savings:
+            return 0
+        return (target_amount - current_savings) / months

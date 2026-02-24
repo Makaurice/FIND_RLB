@@ -23,14 +23,13 @@ class TenantAIAgent:
         if len(self.history) < 3:
             return
         X = np.array([[d['budget'], d['location'] == 'NYC', d['property_type'] == 'apartment'] for d in self.history])
-        y = np.array([1 for _ in self.history])  # Dummy target
+        y = np.array([d.get('interested', 1) for d in self.history])  # Use 'interested' field or default to 1
         self.model.fit(X, y)
         self.trained = True
 
     def fetch_properties_from_contract(self):
         contract = get_contract('PropertyNFT')
-        # Example: fetch all properties
-        # This would be replaced with actual contract call logic
+        # Simulate fetching properties (replace with contract call in production)
         return [
             {'propertyId': 1, 'location': 'NYC', 'price': 1800, 'type': 'apartment'},
             {'propertyId': 2, 'location': 'LA', 'price': 2200, 'type': 'condo'}
@@ -38,6 +37,11 @@ class TenantAIAgent:
 
     def recommend_home(self, properties=None):
         if properties is None:
+            properties = self.fetch_properties_from_contract()
+        # Recommend property with lowest price
+        if not properties:
+            return None
+        return min(properties, key=lambda p: p.get('price', float('inf')))
             properties = self.fetch_properties_from_contract()
         if self.trained:
             X = np.array([[prop['price'], prop['location'] == 'NYC', prop['type'] == 'apartment'] for prop in properties])

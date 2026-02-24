@@ -15,8 +15,7 @@ class LandlordAIAgent:
 
     def fetch_properties_from_contract(self):
         contract = get_contract('PropertyNFT')
-        # Example: fetch properties owned by landlord
-        # Replace with actual contract call
+        # Simulate fetching properties (replace with contract call in production)
         return [
             {'propertyId': 1, 'location': 'NYC', 'price': 1800, 'type': 'apartment'},
             {'propertyId': 2, 'location': 'LA', 'price': 2200, 'type': 'condo'}
@@ -50,13 +49,14 @@ class LandlordAIAgent:
         return f"Vacancy risk: {sum(history)/len(history)*100:.1f}%"
 
     def send_reminder(self, tenant, lease):
+        # Simulate sending a reminder
         return f"Reminder sent to {tenant} for lease {lease}"
 
     def auto_enforce_lease(self, lease):
-        # Use LeaseAgreement contract for enforcement
-        contract = get_contract('LeaseAgreement')
-        # Example: check lease status
-        # Replace with actual contract call
-        if not lease['active']:
+        # Simulate lease enforcement
+        if not lease.get('active', True):
+            lease['status'] = 'enforced'
+            return True
+        return False
             return "Lease terminated automatically."
         return "Lease active and enforced."

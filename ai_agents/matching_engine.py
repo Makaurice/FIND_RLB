@@ -11,23 +11,26 @@ class MatchingEngineAgent:
         self.trained = False
 
     def train_model(self, tenants, properties):
-        X = np.array([[t['budget'], p['price'], t['reputation']] for t, p in zip(tenants, properties)])
-        y = np.array([1 for _ in tenants])  # Dummy target
+        X = np.array([[t['budget'], p['price'], t.get('reputation', 1)] for t, p in zip(tenants, properties)])
+        y = np.array([t.get('interested', 1) for t in tenants])
         self.model.fit(X, y)
         self.trained = True
 
     def fetch_reputation_from_contract(self, tenant_id):
         contract = get_contract('Reputation')
-        # Example: fetch reputation score
-        # Replace with actual contract call
-        return 2  # Dummy value
+        # Simulate fetching reputation (replace with contract call in production)
+        return 5  # Example static value
 
     def match(self, tenants, properties):
         self.train_model(tenants, properties)
         matches = []
         for tenant in tenants:
             tenant['reputation'] = self.fetch_reputation_from_contract(tenant['id'])
-            for prop in properties:
+            # Match to property with price <= budget
+            suitable = [p for p in properties if p['price'] <= tenant['budget']]
+            if suitable:
+                matches.append((tenant, suitable[0]))
+        return matches
                 if self.trained:
                     X = np.array([[tenant['budget'], prop['price'], tenant['reputation']]])
                     score = self.model.predict(X)[0]

@@ -10,7 +10,13 @@ export default function TenantHome() {
 
   const features = [
     {
-      icon: '🔍',
+      icon: '�',
+      name: 'Dashboard',
+      description: 'View your stats, payments, and recommendations',
+      href: '/tenant/dashboard'
+    },
+    {
+      icon: '�🔍',
       name: 'Property Search',
       description: 'Discover properties using AI recommendations',
       href: '/tenant/search'
@@ -55,17 +61,17 @@ export default function TenantHome() {
 
   return (
     <ProtectedPage requiredRole="tenant">
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
+      <div className="min-h-screen bg-gradient-to-br from-[#e6e2d3] via-[#b3c6e7] to-[#23272b]">
         {/* Header */}
-        <div className="bg-white shadow">
+        <div className="bg-gradient-to-r from-[#f7ca18] to-[#5bc0eb] shadow-xl">
           <div className="max-w-6xl mx-auto px-8 py-6 flex justify-between items-center">
             <div>
-              <h1 className="text-4xl font-bold text-blue-600">Tenant App</h1>
-              <p className="text-gray-600">Welcome, {user?.first_name}!</p>
+              <h1 className="text-4xl font-bold text-[#23272b]">Tenant App</h1>
+              <p className="text-[#23272b]">Welcome, {user?.first_name}!</p>
             </div>
             <button
               onClick={() => logout()}
-              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition"
+              className="px-4 py-2 bg-[#23272b] hover:bg-[#1a1d21] text-white rounded-lg transition"
             >
               Sign Out
             </button>
@@ -74,15 +80,15 @@ export default function TenantHome() {
 
         {/* Features Grid */}
         <div className="max-w-6xl mx-auto px-8 py-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8">Features</h2>
+          <h2 className="text-2xl font-bold text-white mb-8">Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, idx) => (
               <Link key={idx} href={feature.href}>
-                <div className="bg-white rounded-lg shadow hover:shadow-lg transition cursor-pointer p-6 h-full">
+                <div className="bg-gradient-to-br from-white to-[#f8fafc] rounded-xl shadow-lg hover:shadow-xl transition cursor-pointer p-6 h-full border border-[#e6e2d3]">
                   <div className="text-4xl mb-3">{feature.icon}</div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">{feature.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{feature.description}</p>
-                  <div className="text-blue-600 font-semibold">View →</div>
+                  <h3 className="text-lg font-bold text-[#23272b] mb-2">{feature.name}</h3>
+                  <p className="text-[#6c7a89] text-sm mb-4">{feature.description}</p>
+                  <div className="text-[#5bc0eb] font-semibold">View →</div>
                 </div>
               </Link>
             ))}

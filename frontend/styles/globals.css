@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-900 text-white;
+}
+
+a {
+  @apply text-blue-400 hover:text-blue-300;
+}
+
+button {
+  @apply transition-colors duration-200;
+}

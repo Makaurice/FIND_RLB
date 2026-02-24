@@ -1,6 +1,6 @@
 from django.urls import path
 from .views_contracts import (
-    RegisterPropertyView, CreateLeaseView, PayRentView, DepositSavingsView, PayOnBehalfView, UpdateReputationView
+    RegisterPropertyView, CreateLeaseView, PayRentView, DepositSavingsView, PayOnBehalfView, UpdateReputationView, TenantEventsView, RentalHistoryView
 )
 
 urlpatterns = [
@@ -10,4 +10,6 @@ urlpatterns = [
     path('savings/<int:plan_id>/deposit', DepositSavingsView.as_view()),
     path('thirdparty/pay', PayOnBehalfView.as_view()),
     path('reputation/<str:user>/<str:action>', UpdateReputationView.as_view()),
+    path('tenant/events', TenantEventsView.as_view()),
+    path('rental/history', RentalHistoryView.as_view()),
 ]

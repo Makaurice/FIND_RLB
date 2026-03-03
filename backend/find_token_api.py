@@ -1,9 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from backend.contracts import get_contract
+from contracts import get_contract
 from django.conf import settings
-from web3 import Web3
+# from web3 import Web3
 from datetime import datetime
 
 class TokenBalanceView(APIView):
@@ -12,10 +12,10 @@ class TokenBalanceView(APIView):
         try:
             contract = get_contract('FindToken')
             # Validate address format
-            try:
-                checksum_addr = Web3.toChecksumAddress(address)
-            except:
+            # Validate address format
+            if not address or len(address) < 10:
                 return Response({'error': 'Invalid address format'}, status=status.HTTP_400_BAD_REQUEST)
+            checksum_addr = address
             
             # In production: Call real token contract
             # balance = contract.functions.balanceOf(checksum_addr).call()
@@ -43,9 +43,10 @@ class TokenTransferView(APIView):
             if not all([from_addr, to_addr, amount_str]):
                 return Response({'error': 'Missing required fields'}, status=status.HTTP_400_BAD_REQUEST)
             
+            # Validate addresses
+            if not from_addr or not to_addr or len(from_addr) < 10 or len(to_addr) < 10:
+                return Response({'error': 'Invalid address format'}, status=status.HTTP_400_BAD_REQUEST)
             try:
-                from_addr = Web3.toChecksumAddress(from_addr)
-                to_addr = Web3.toChecksumAddress(to_addr)
                 amount = int(float(amount_str) * (10 ** 18))  # Convert to wei
             except:
                 return Response({'error': 'Invalid address or amount format'}, status=status.HTTP_400_BAD_REQUEST)

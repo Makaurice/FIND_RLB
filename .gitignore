@@ -1,0 +1,17 @@
+# Ignore markdown docs
+*.md
+
+# Ignore node modules
+node_modules/
+**/node_modules/
+
+# Python virtual environments
+.venv/
+env/
+
+# Django database
+db.sqlite3
+
+# Editor configs
+.vscode/
+.idea/

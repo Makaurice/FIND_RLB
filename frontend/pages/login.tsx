@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function LoginPage() {
   const router = useRouter();
-  const { login, isLoading, error, clearError } = useAuth();
+  const { login, isLoading, error, clearError, user } = useAuth();
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -26,9 +26,27 @@ export default function LoginPage() {
     clearError();
     
     try {
-      await login(formData.username, formData.password);
-      // Redirect based on role after successful login
-      router.push('/');
+      const success = await login(formData.username, formData.password);
+      if (success) {
+        // redirect based on role (tenant, landlord, service_provider, admin)
+        if (user) {
+          switch (user.role) {
+            case 'tenant':
+              router.push('/tenant');
+              break;
+            case 'landlord':
+              router.push('/landlord');
+              break;
+            case 'service_provider':
+              router.push('/service');
+              break;
+            default:
+              router.push('/');
+          }
+        } else {
+          router.push('/');
+        }
+      }
     } catch (err) {
       console.error('Login error:', err);
     }

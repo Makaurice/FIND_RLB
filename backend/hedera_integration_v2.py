@@ -514,6 +514,32 @@ class HederaClient:
                 'transactionId': transaction_id,
             }
 
+    def get_account_public_key(self, account_id: str) -> Dict[str, Any]:
+        """Return the public key for a Hedera account.
+
+        Returns a dict with keys `status` and `publicKey` when available.
+        Falls back to a mock value when the Hedera SDK isn't available.
+        """
+        try:
+            if HEDERA_AVAILABLE and self.client:
+                from hedera import AccountInfoQuery
+                info = AccountInfoQuery().setAccountId(account_id).execute(self.client)
+                # try to read key fields; the SDK object differs by version
+                pub = None
+                if hasattr(info, 'key') and info.key is not None:
+                    pub = str(info.key)
+                elif hasattr(info, 'contractAccountKey') and info.contractAccountKey is not None:
+                    pub = str(info.contractAccountKey)
+                else:
+                    pub = ''
+                return {'status': 'SUCCESS', 'publicKey': pub}
+            else:
+                # mock mode: return a deterministic mock public key for testing
+                mock_key = '00' * 32
+                return {'status': 'MOCK', 'publicKey': mock_key}
+        except Exception as e:
+            return {'status': 'ERROR', 'error': str(e)}
+
     def get_contract_state(self, contract_id: str, function: str = None) -> Dict[str, Any]:
         """
         Get contract state/variables.

@@ -26,9 +26,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'accounts',
-    'property',
-    'tenant',
+    'accounts.apps.AccountsConfig',
+    'property.apps.PropertyConfig',
+    'tenant.apps.TenantConfig',
     'landlord',
     'service',
 ]
@@ -109,6 +109,18 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
 }
+
+# blockchain configuration (Hedera & Web3)
+import os
+
+WEB3_PROVIDER_URL = os.getenv('WEB3_PROVIDER_URL', 'http://localhost:8545')
+HEDERA_ACCOUNT_ID = os.getenv('HEDERA_ACCOUNT_ID', '')
+HEDERA_PRIVATE_KEY = os.getenv('HEDERA_PRIVATE_KEY', '')
+HEDERA_NETWORK = os.getenv('HEDERA_NETWORK', 'testnet')
+# optional: store deployed contract IDs
+HEDERA_PROPERTYNFT_CONTRACT_ID = os.getenv('HEDERA_PROPERTYNFT_CONTRACT_ID')
+HEDERA_REPUTATION_CONTRACT_ID = os.getenv('HEDERA_REPUTATION_CONTRACT_ID')
+HEDERA_SAVINGSVAULT_CONTRACT_ID = os.getenv('HEDERA_SAVINGSVAULT_CONTRACT_ID')
 
 # JWT Configuration
 from datetime import timedelta

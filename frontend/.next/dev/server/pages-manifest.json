@@ -2,6 +2,13 @@
   "/": "pages/index.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/landlord": "pages/landlord.js",
+  "/landlord/listings": "pages/landlord/listings.js",
   "/login": "pages/login.js",
-  "/register": "pages/register.js"
+  "/service": "pages/service.js",
+  "/service/maintenance": "pages/service/maintenance.js",
+  "/service/movers": "pages/service/movers.js",
+  "/tenant": "pages/tenant.js",
+  "/tenant/calendar": "pages/tenant/calendar.js"
 }

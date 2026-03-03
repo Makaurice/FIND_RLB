@@ -55,11 +55,14 @@ export const useAuth = (): UseAuthReturn => {
       const response = await authAPI.login({ username, password });
       if (response.success && response.data) {
         setUser(response.data.user);
+        return true;
       } else {
         setError(response.error || 'Login failed');
+        return false;
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
+      return false;
     } finally {
       setIsLoading(false);
     }

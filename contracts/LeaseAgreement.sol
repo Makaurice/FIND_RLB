@@ -136,4 +136,37 @@ contract LeaseAgreement {
         if (status == LeaseStatus.TERMINATED) return "TERMINATED";
         return "DISPUTED";
     }
+
+    /**
+     * @dev Force enforcement of a lease by the landlord or arbitrator.
+     * Sets the lease status to TERMINATED regardless of current state.
+     */
+    function enforceLease(uint leaseId) external {
+        Lease storage lease = leases[leaseId];
+        require(msg.sender == lease.landlord || msg.sender == arbitrator, "Not authorized");
+        lease.status = LeaseStatus.TERMINATED;
+        emit LeaseTerminated(leaseId, "ENFORCED");
+    }
+
+    /**
+     * @dev Return a simplified history of leases for a given tenant.
+     * This is a convenience view used by off-chain agents for ML training.
+     */
+    function getTenantHistory(address tenant) external view returns (Lease[] memory) {
+        uint count = 0;
+        for (uint i = 0; i < nextLeaseId; i++) {
+            if (leases[i].tenant == tenant) {
+                count++;
+            }
+        }
+        Lease[] memory result = new Lease[](count);
+        uint idx = 0;
+        for (uint i = 0; i < nextLeaseId; i++) {
+            if (leases[i].tenant == tenant) {
+                result[idx] = leases[i];
+                idx++;
+            }
+        }
+        return result;
+    }
 }

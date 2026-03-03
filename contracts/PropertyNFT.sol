@@ -144,6 +144,25 @@ contract PropertyNFT {
         return ownerProperties[owner_addr];
     }
 
+    /// @notice return a list of all properties currently AVAILABLE
+    function getAvailableProperties() external view returns (Property[] memory) {
+        uint256 count = 0;
+        for (uint256 i = 0; i < nextPropertyId; i++) {
+            if (properties[i].status == PropertyStatus.AVAILABLE) {
+                count++;
+            }
+        }
+        Property[] memory list = new Property[](count);
+        uint256 idx = 0;
+        for (uint256 i = 0; i < nextPropertyId; i++) {
+            if (properties[i].status == PropertyStatus.AVAILABLE) {
+                list[idx] = properties[i];
+                idx++;
+            }
+        }
+        return list;
+    }
+
     function _getStatusString(PropertyStatus status) internal pure returns (string memory) {
         if (status == PropertyStatus.AVAILABLE) return "AVAILABLE";
         if (status == PropertyStatus.OCCUPIED) return "OCCUPIED";
@@ -159,5 +178,24 @@ contract PropertyNFT {
                 break;
             }
         }
+    }
+
+    // --- additional helpers for off-chain analytics ---
+
+    struct MarketRecord {
+        uint256 avgPrice;
+        uint256 demand; // arbitrary units
+        uint256 timestamp;
+    }
+
+    // simple array to keep track of market data (for demonstration)
+    MarketRecord[] public marketHistory;
+
+    function recordMarketData(uint256 avgPrice, uint256 demand) external onlyOwner {
+        marketHistory.push(MarketRecord(avgPrice, demand, block.timestamp));
+    }
+
+    function getMarketHistory() external view returns (MarketRecord[] memory) {
+        return marketHistory;
     }
 }

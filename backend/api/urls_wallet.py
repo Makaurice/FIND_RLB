@@ -1,5 +1,5 @@
 from django.urls import path
-from ..wallet_api import (
+from wallet_api import (
     WalletBalanceView, WalletCreateView, BankAccountLinkView, 
     DepositView, WithdrawView, TransferView, EscrowLockView,
     SavingsDepositView, TransactionHistoryView, PaymentAuthorizationView

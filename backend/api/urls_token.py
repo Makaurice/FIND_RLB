@@ -1,5 +1,5 @@
 from django.urls import path
-from ..find_token_api import TokenBalanceView, TokenTransferView, TokenClaimTeamView
+from find_token_api import TokenBalanceView, TokenTransferView, TokenClaimTeamView
 
 urlpatterns = [
     path('token/balance/<str:address>', TokenBalanceView.as_view()),

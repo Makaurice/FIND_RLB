@@ -1,3 +1,9 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from datetime import datetime, timedelta
+from contracts import get_contract
+
 class RentalHistoryView(APIView):
     """API endpoint to get rental/payment history for a landlord or tenant."""
     def get(self, request):
@@ -6,7 +12,7 @@ class RentalHistoryView(APIView):
             {
                 'id': 1,
                 'property': '123 Main St',
-                'tenant': 'John Doe',
+                'tenant': 'Maurice Makokha',
                 'amount': 1200,
                 'date': '2026-02-01',
                 'status': 'Paid',
@@ -14,7 +20,7 @@ class RentalHistoryView(APIView):
             {
                 'id': 2,
                 'property': '123 Main St',
-                'tenant': 'John Doe',
+                'tenant': 'Maurice Makokha',
                 'amount': 1200,
                 'date': '2026-01-01',
                 'status': 'Paid',
@@ -29,7 +35,6 @@ class RentalHistoryView(APIView):
             },
         ]
         return Response({'history': sample_history}, status=status.HTTP_200_OK)
-from datetime import datetime, timedelta
 
 class TenantEventsView(APIView):
     """API endpoint to get reminders/events for a tenant (rent due, lease renewal, maintenance, etc.)"""
@@ -59,10 +64,6 @@ class TenantEventsView(APIView):
             },
         ]
         return Response({'events': sample_events}, status=status.HTTP_200_OK)
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-from .contracts import get_contract
 
 class RegisterPropertyView(APIView):
     """Register a property as an NFT. In production, integrates with PropertyNFT contract on Hedera."""

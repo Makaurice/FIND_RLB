@@ -1,12 +1,13 @@
 """
-P2P Community Recommendation Agent
+P2P Community Recommendation Agent (Web3 version)
 - Peer suggestions
 - Trust-based recommendations
-- Community insights
+- Community insights using an on-chain registry
 """
 
 from typing import List, Dict, Any
 from datetime import datetime
+from backend.contracts import get_contract, call_hedera_contract
 
 class P2PCommunityAgent:
     """AI agent for peer-to-peer recommendations in the community."""
@@ -14,18 +15,27 @@ class P2PCommunityAgent:
     def __init__(self):
         self.user_profiles: Dict[str, Dict] = {}
         self.recommendation_history: Dict[str, List[Dict]] = {}
+        self.contract = None
+        self._init_contract()
+
+    def _init_contract(self):
+        try:
+            self.contract = get_contract('P2PCommunity')
+        except Exception:
+            self.contract = None
 
     def register_user(self, user_id: str, user_type: str = 'tenant') -> Dict[str, Any]:
         """
-        Register a new user in the P2P community.
-        
-        Args:
-            user_id: Unique user identifier
-            user_type: 'tenant' or 'landlord'
-            
-        Returns:
-            User profile
+        Register a new user in the P2P community (on-chain if possible).
         """
+        if self.contract:
+            try:
+                tx = self.contract.functions.registerUser(user_id, user_type).transact({'from': user_id})
+                receipt = self.contract.web3.eth.wait_for_transaction_receipt(tx)
+                return {'transactionReceipt': dict(receipt)}
+            except Exception:
+                pass
+
         self.user_profiles[user_id] = {
             'userId': user_id,
             'userType': user_type,
@@ -38,7 +48,6 @@ class P2PCommunityAgent:
         }
         self.recommendation_history[user_id] = []
         return self.user_profiles[user_id]
-
     def get_tenant_recommendations(self, tenant_id: str, limit: int = 5) -> Dict[str, Any]:
         """
         Get landlord recommendations based on tenant's preferences and community trust.
@@ -53,6 +62,14 @@ class P2PCommunityAgent:
         if tenant_id not in self.user_profiles:
             return {'error': 'Tenant not found'}
         
+        # if on-chain scoring is available, delegate there first
+        try:
+            onchain = call_hedera_contract('P2PCommunity', 'getTenantRecommendations', [tenant_id, 5])
+            if onchain.get('result'):
+                return onchain['result']
+        except Exception:
+            pass
+
         # In production: ML model would score all landlords
         recommendations = []
         
@@ -92,6 +109,14 @@ class P2PCommunityAgent:
         if landlord_id not in self.user_profiles:
             return {'error': 'Landlord not found'}
         
+        # try on-chain
+        try:
+            onchain = call_hedera_contract('P2PCommunity', 'getLandlordRecommendations', [landlord_id, 5])
+            if onchain.get('result'):
+                return onchain['result']
+        except Exception:
+            pass
+
         recommendations = []
         
         for user_id, profile in self.user_profiles.items():
@@ -103,8 +128,7 @@ class P2PCommunityAgent:
                     'rating': profile['rating'],
                     'totalReviews': profile['totalReviews'],
                     'matchScore': score,
-                })
-        
+                })        
         recommendations.sort(key=lambda x: x['matchScore'], reverse=True)
         
         recommendation = {

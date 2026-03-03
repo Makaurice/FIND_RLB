@@ -1,6 +1,23 @@
-[00:01:28.166] Server  LOG     
-[00:01:28.167] Server  LOG       We detected TypeScript in your project and created a tsconfig.json file for you.
-[00:01:49.247] Server  LOG     ✓ Ready in 89.8s
-[00:01:52.500] Server  LOG     ○ Compiling / ...
-[00:03:52.039] Server  LOG     ✓ Finished writing to filesystem cache in 44s
-[00:03:52.041] Server  LOG     ○ Compiling /login ...
+[00:00:16.801] Server  LOG     ✓ Ready in 16s
+[00:00:19.887] Server  LOG     ○ Compiling / ...
+[00:00:43.103] Server  LOG     ○ Compiling /_error ...
+[00:45:36.695] Server  LOG     ✓ Compiled in 3.9s
+[00:47:53.533] Browser LOG     Refreshing page data due to server-side change
+[00:47:55.948] Server  LOG     ✓ Compiled in 3.9s
+[00:47:57.405] Browser ERROR   ./frontend/pages/tenant.tsx:26:19
+Parsing ecmascript source code failed
+  24 |     {
+  25 |       icon: '💳',
+> 26 |       "use client";
+     |                   ^
+  27 |
+  28 |       import React from 'react';
+  29 |       import { ProtectedPage } from '../../frontend/components/ProtectedPage' || require('../../frontend/components/ProtectedPage');
+
+Expected a semicolon
+[00:48:15.247] Server  LOG     ✓ Compiled in 6.5s
+[00:48:26.493] Server  LOG     ○ Compiling /tenant ...
+[00:48:49.308] Server  LOG     ✓ Compiled in 942ms
+[00:49:23.327] Server  LOG     ✓ Finished filesystem cache database compaction in 64s
+[00:49:24.704] Server  LOG     ✓ Finished writing to filesystem cache in 63s
+[01:05:14.038] Server  LOG     ✓ Finished writing to filesystem cache in 58s

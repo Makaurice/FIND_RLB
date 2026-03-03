@@ -23,6 +23,9 @@ class WalletService:
             'savings_vault': 0.0,
             'reputation_bonus': 0.0,
         }
+        # For non-custodial wallets we may generate key pairs
+        import secrets
+        self._secrets = secrets
         self.transaction_log = []
         self.connected_banks = []
 
@@ -45,13 +48,16 @@ class WalletService:
         Create non-custodial wallet (user owns private key).
         User can export and use with other Hedera wallets.
         """
+        # generate a new random 32-byte hex private key
+        priv = self._secrets.token_hex(32)
+        pub = self._secrets.token_hex(64)  # in production derive from priv
         return {
             'userId': self.user_id,
             'walletType': 'NON_CUSTODIAL',
             'message': 'User must securely store private key',
-            'generatedPrivateKey': '0x' + 'a' * 64,  # Placeholder
-            'publicKey': '0x' + 'b' * 128,
-            'hedera_account': '0.0.123456',
+            'generatedPrivateKey': '0x' + priv,
+            'publicKey': '0x' + pub,
+            'hedera_account': f"0.0.{self._secrets.randbelow(1000000)}",
             'createdAt': datetime.now().isoformat(),
             'warning': 'Lost keys = lost funds. NEVER share private key.',
         }

@@ -2,6 +2,11 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+# Ensure project root (parent of backend) is on sys.path first so top-level apps
+# are imported before backend subpackages during test discovery and runtime.
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 def main():
     """Run administrative tasks."""

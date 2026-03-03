@@ -1,8 +1,8 @@
 from django.urls import path
-from ..ai_agent_api import (
+from ai_agent_api import (
     TenantAgentView, LandlordAgentView, MatchingEngineView, TopMatchesView, 
     AdvancedTenantRecommendationView, GuardianAgentView, MovingServiceAgentView, 
-    SavingsToOwnAgentView
+    SavingsToOwnAgentView, P2PCommunityAgentView, HederaAuthView
 )
 
 urlpatterns = [
@@ -14,4 +14,6 @@ urlpatterns = [
     path('ai/guardian', GuardianAgentView.as_view()),
     path('ai/moving-service', MovingServiceAgentView.as_view()),
     path('ai/savings-to-own', SavingsToOwnAgentView.as_view()),
+    path('auth/hedera', HederaAuthView.as_view()),
+    path('ai/p2p-community', P2PCommunityAgentView.as_view()),
 ]

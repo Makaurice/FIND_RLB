@@ -1,0 +1,12 @@
+__turbopack_load_page_chunks__("/landlord", [
+  "static/chunks/9e883_next_dist_compiled_7638d890._.js",
+  "static/chunks/9e883_next_dist_shared_lib_ec857e9b._.js",
+  "static/chunks/9e883_next_dist_client_e5af6901._.js",
+  "static/chunks/9e883_next_dist_2b7b01c5._.js",
+  "static/chunks/9e883_next_cd8b5d26._.js",
+  "static/chunks/9e883_react-dom_3d11c48e._.js",
+  "static/chunks/9e883_fedfea85._.js",
+  "static/chunks/[root-of-the-server]__d5375f0c._.js",
+  "static/chunks/frontend_pages_landlord_2da965e7._.js",
+  "static/chunks/turbopack-frontend_pages_landlord_f4f0d096._.js"
+])

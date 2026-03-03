@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import ProtectedPage from '../components/ProtectedPage';
+import { ProtectedPage } from '../components/ProtectedPage';
 import { useAuth } from '../hooks/useAuth';
 
 export default function ServiceProviderPortal() {

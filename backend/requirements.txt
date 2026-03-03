@@ -6,4 +6,6 @@ psycopg2-binary
 python-dotenv
 requests
 hedera-sdk
-ipfshttpclient
+ipfshttpclientweb3
+web3
+cryptography

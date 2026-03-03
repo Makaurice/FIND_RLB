@@ -1,8 +1,10 @@
-# Moving Service AI Agent
-# Manages moving service quotes, scheduling, and autonomous pricing based on demand/supply
+# Moving Service AI Agent (Web3-ready)
+# Manages moving service quotes, scheduling, and autonomous pricing; optionally persists
+# bookings on-chain.
 
 import random
 from datetime import datetime, timedelta
+from backend.contracts import get_contract, call_hedera_contract
 
 class MovingServiceAgent:
     def __init__(self, service_provider_id):
@@ -12,30 +14,27 @@ class MovingServiceAgent:
         self.available_trucks = {'small': 3, 'medium': 2, 'large': 1}
         self.bookings = []
         self.demand_multiplier = 1.0  # Dynamic pricing
+        self.contract = None
+        self._init_contract()
+
+    def _init_contract(self):
+        try:
+            self.contract = get_contract('MovingService')
+        except Exception:
+            self.contract = None
 
     def get_quote(self, moving_data):
         """Generate dynamic quote based on distance, items, time, and demand."""
         distance = moving_data.get('distance', 10)
         items_weight = moving_data.get('items_weight', 1000)  # kg
-        moving_date = moving_data.get('moving_date')
         truck_type = moving_data.get('truck_type', 'medium')
-        
-        # Estimate time (0.5 hours per 1000kg)
         hours = max(2, items_weight / 1000 * 0.5)
-        
-        # Base cost
         distance_cost = distance * self.base_price_per_mile
         hourly_cost = hours * self.base_hourly_rate
         base_total = distance_cost + hourly_cost
-        
-        # Apply truck size premium
         truck_premiums = {'small': 0.8, 'medium': 1.0, 'large': 1.3}
         base_total *= truck_premiums.get(truck_type, 1.0)
-        
-        # Apply demand multiplier (surge pricing)
         final_total = base_total * self.demand_multiplier
-        
-        # Calculate breakdown
         quote = {
             'providerId': self.provider_id,
             'quoteId': random.randint(10000, 99999),
@@ -53,10 +52,10 @@ class MovingServiceAgent:
         return quote
 
     def book_moving(self, quote_id, customer_id, moving_date, truck_type):
-        """Book a moving service."""
+        """Book a moving service and optionally write booking to chain."""
         if self.available_trucks.get(truck_type, 0) <= 0:
             return {'error': f'No {truck_type} trucks available'}
-        
+
         booking = {
             'bookingId': random.randint(100000, 999999),
             'quoteId': quote_id,
@@ -68,23 +67,42 @@ class MovingServiceAgent:
             'paymentStatus': 'PENDING',
             'bookedAt': datetime.now().isoformat(),
         }
-        
-        # Reserve truck
+
+        # Persist on-chain if Hedera contract configured
+        try:
+            call_hedera_contract('MovingService', 'createBooking', [
+                booking['bookingId'],
+                self.provider_id,
+                customer_id,
+                moving_date,
+                truck_type,
+            ])
+        except Exception:
+            pass
+
+        # Persist on-chain if Web3 contract available
+        if self.contract:
+            try:
+                tx = self.contract.functions.createBooking(
+                    booking['bookingId'],
+                    self.provider_id,
+                    customer_id,
+                    moving_date,
+                    truck_type,
+                ).transact({'from': self.provider_id})
+                self.contract.web3.eth.wait_for_transaction_receipt(tx)
+            except Exception:
+                pass
+
         self.available_trucks[truck_type] -= 1
         self.bookings.append(booking)
-        
-        # Adjust demand multiplier based on occupancy
         self._update_demand_multiplier()
-        
         return booking
 
     def _update_demand_multiplier(self):
-        """Dynamically adjust pricing based on truck utilization."""
         total_trucks = sum(self.available_trucks.values())
-        total_capacity = 6  # 3 small + 2 medium + 1 large
+        total_capacity = 6
         utilization = (total_capacity - total_trucks) / total_capacity
-        
-        # Demand multiplier ranges from 0.9 (low demand) to 1.5 (high demand)
         if utilization > 0.8:
             self.demand_multiplier = 1.5
         elif utilization > 0.6:
@@ -95,7 +113,6 @@ class MovingServiceAgent:
             self.demand_multiplier = 0.9
 
     def get_available_trucks(self):
-        """Get current truck availability."""
         return {
             'providerId': self.provider_id,
             'available': self.available_trucks,
@@ -103,29 +120,51 @@ class MovingServiceAgent:
         }
 
     def get_booking_status(self, booking_id):
-        """Get status of a booking."""
         for booking in self.bookings:
             if booking['bookingId'] == booking_id:
                 return booking
+        # if on-chain Hedera contract exists
+        try:
+            res = call_hedera_contract('MovingService', 'getBooking', [booking_id])
+            if res.get('result'):
+                return res['result']
+        except Exception:
+            pass
+        # if Web3 contract, try reading there as well
+        if self.contract:
+            try:
+                return self.contract.functions.getBooking(booking_id).call()
+            except Exception:
+                pass
         return {'error': 'Booking not found'}
 
     def complete_booking(self, booking_id, actual_hours, actual_distance):
-        """Mark booking as complete and bill customer."""
         for booking in self.bookings:
             if booking['bookingId'] == booking_id:
-                # Calculate actual cost
-                actual_cost = (actual_distance * self.base_price_per_mile + 
-                             actual_hours * self.base_hourly_rate)
-                
+                actual_cost = (
+                    actual_distance * self.base_price_per_mile +
+                    actual_hours * self.base_hourly_rate
+                )
                 booking['status'] = 'COMPLETED'
                 booking['paymentStatus'] = 'PROCESSING'
                 booking['actualCost'] = round(actual_cost, 2)
                 booking['completedAt'] = datetime.now().isoformat()
-                
-                # Release truck
                 self.available_trucks[booking['truckType']] += 1
                 self._update_demand_multiplier()
-                
+                # persist completion on-chain (Hedera then Web3)
+                try:
+                    call_hedera_contract('MovingService', 'completeBooking', [
+                        booking_id, actual_hours, actual_distance
+                    ])
+                except Exception:
+                    pass
+                if self.contract:
+                    try:
+                        tx = self.contract.functions.completeBooking(
+                            booking_id, actual_hours, actual_distance
+                        ).transact({'from': self.provider_id})
+                        self.contract.web3.eth.wait_for_transaction_receipt(tx)
+                    except Exception:
+                        pass
                 return booking
-        
         return {'error': 'Booking not found'}

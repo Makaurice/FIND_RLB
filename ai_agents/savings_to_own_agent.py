@@ -1,17 +1,50 @@
-# Savings-to-Own DeFi Agent
-# Manages the rent-to-own mechanism: tenant pays rent, percentage goes to savings vault
-# When threshold reached, tenant becomes property owner
+# Savings-to-Own DeFi Agent (Web3 migration)
+# Manages the rent-to-own mechanism using an on-chain SavingsVault contract
+
+from backend.contracts import get_contract, call_hedera_contract
+from datetime import datetime
 
 class SavingsToOwnAgent:
     def __init__(self, tenant_id):
         self.tenant_id = tenant_id
         self.plans = {}
+        self.contract = None
+        self._init_contract()
+
+    def _init_contract(self):
+        try:
+            self.contract = get_contract('SavingsVault')
+        except Exception:
+            self.contract = None
 
     def create_plan(self, property_id, target_price, monthly_rent, savings_percentage):
-        """Create a rent-to-own savings plan."""
+        """Create a rent-to-own savings plan on-chain."""
         if savings_percentage < 0 or savings_percentage > 50:
             return {'error': 'Savings percentage 0-50%'}
-        
+        # attempt to create on Hedera
+        try:
+            return call_hedera_contract('SavingsVault', 'createPlan', [
+                self.tenant_id,
+                property_id,
+                target_price,
+                monthly_rent,
+                savings_percentage,
+            ])
+        except Exception:
+            pass
+        if self.contract:
+            try:
+                tx = self.contract.functions.createPlan(
+                    self.tenant_id,
+                    property_id,
+                    target_price,
+                    monthly_rent,
+                    savings_percentage,
+                ).transact({'from': self.tenant_id})
+                receipt = self.contract.web3.eth.wait_for_transaction_receipt(tx)
+                return {'transactionReceipt': dict(receipt)}
+            except Exception:
+                pass
         plan = {
             'planId': len(self.plans) + 1,
             'tenantId': self.tenant_id,
@@ -26,7 +59,6 @@ class SavingsToOwnAgent:
             'status': 'ACTIVE',
             'createdAt': str(datetime.now()),
         }
-        
         self.plans[plan['planId']] = plan
         return plan
 
@@ -34,11 +66,9 @@ class SavingsToOwnAgent:
         """Simulate a month of rent payment with split between landlord and savings."""
         if plan_id not in self.plans:
             return {'error': 'Plan not found'}
-        
         plan = self.plans[plan_id]
         plan['totalMonths'] += 1
         plan['savedAmount'] += plan['monthlyTowardsPurchase']
-        
         payment = {
             'planId': plan_id,
             'month': month_number,
@@ -48,23 +78,18 @@ class SavingsToOwnAgent:
             'totalSaved': plan['savedAmount'],
             'progressPercent': round((plan['savedAmount'] / plan['targetPrice']) * 100, 2),
         }
-        
-        # Check if ownership threshold reached
         if plan['savedAmount'] >= plan['targetPrice']:
             plan['status'] = 'COMPLETED'
             payment['ownershipReady'] = True
             payment['message'] = 'Savings goal reached! Ready to convert to ownership.'
-        
         return payment
 
     def get_plan_progress(self, plan_id):
         """Get current progress toward ownership."""
         if plan_id not in self.plans:
             return {'error': 'Plan not found'}
-        
         plan = self.plans[plan_id]
         months_remaining = max(0, round((plan['targetPrice'] - plan['savedAmount']) / plan['monthlyTowardsPurchase']))
-        
         return {
             'planId': plan_id,
             'propertyId': plan['propertyId'],
@@ -81,13 +106,21 @@ class SavingsToOwnAgent:
         """Convert completed savings plan to property ownership."""
         if plan_id not in self.plans:
             return {'error': 'Plan not found'}
-        
         plan = self.plans[plan_id]
-        
         if plan['status'] != 'COMPLETED':
             return {'error': 'Plan not yet completed'}
-        
-        # Trigger on-chain ownership transfer
+        if self.contract:
+            try:
+                tx = self.contract.functions.convertToOwnership(plan_id).transact({'from': self.tenant_id})
+                receipt = self.contract.web3.eth.wait_for_transaction_receipt(tx)
+                return {'transactionReceipt': dict(receipt)}
+            except Exception:
+                pass
+        # hedra fallback
+        try:
+            return call_hedera_contract('SavingsVault', 'convertToOwnership', [plan_id])
+        except Exception:
+            pass
         return {
             'planId': plan_id,
             'tenantId': self.tenant_id,
@@ -96,18 +129,15 @@ class SavingsToOwnAgent:
             'message': 'Ownership transfer initiated. Please wait for confirmation.',
             'estimatedTime': '24 hours',
         }
-
     def calculate_final_cost(self, plan_id):
         """Calculate total cost to tenant (lower than market price)."""
         if plan_id not in self.plans:
             return {'error': 'Plan not found'}
-        
         plan = self.plans[plan_id]
         total_rent_paid = plan['monthlyRent'] * plan['totalMonths']
         savings_applied = plan['savedAmount']
         discount = savings_applied
         final_cost = plan['targetPrice'] - discount
-        
         return {
             'planId': plan_id,
             'originalPrice': plan['targetPrice'],
@@ -125,6 +155,3 @@ class SavingsToOwnAgent:
             'activePlans': len([p for p in self.plans.values() if p['status'] == 'ACTIVE']),
             'completedPlans': len([p for p in self.plans.values() if p['status'] == 'COMPLETED']),
         }
-
-
-from datetime import datetime

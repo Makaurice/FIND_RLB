@@ -16,8 +16,25 @@ class CommunityService:
         self.referrals: Dict[str, List[Dict]] = {}
         self.reviews: Dict[str, List[Dict]] = {}
         self.ratings: Dict[str, List[float]] = {}
+        # records of on-time payments by user
+        self.payment_records: Dict[str, List[Dict]] = {}
+        # external reputation scores (0-100) provided by other subsystems
+        self.reputation_scores: Dict[str, float] = {}
         self.reward_pool = 0.0
         self.base_referral_reward = 100.0  # FIND tokens
+
+    def record_payment(self, user_id: str, amount: float, timestamp: Optional[str] = None) -> None:
+        """Register an on-time payment for trust calculation."""
+        if timestamp is None:
+            timestamp = datetime.now().isoformat()
+        self.payment_records.setdefault(user_id, []).append({
+            'amount': amount,
+            'timestamp': timestamp,
+        })
+
+    def update_reputation(self, user_id: str, score: float) -> None:
+        """Externally update a user's reputation score (0-100 scale)."""
+        self.reputation_scores[user_id] = max(0.0, min(score, 100.0))
 
     def submit_referral(self, referrer_id: str, referred_user_id: str, referral_code: str) -> Dict[str, Any]:
         """
@@ -228,9 +245,12 @@ class CommunityService:
             completed = len([r for r in self.referrals[user_id] if r['status'] == 'COMPLETED'])
             referral_score = min(completed * 5, 20)  # Max 20 points
         
-        # Payment history and reputation would come from other sources
-        payment_score = 30  # Placeholder
-        reputation_score = 30  # Placeholder
+        # Payment history: each on‑time payment adds 1 point, max 30
+        payments = self.payment_records.get(user_id, [])
+        payment_score = min(len(payments), 30)
+        # Reputation score: normalized to 30 points (assuming 0-100 range)
+        rep = self.reputation_scores.get(user_id, 50)
+        reputation_score = min(max(rep, 0), 100) * 0.30
         
         total_trust = rating_score + referral_score + payment_score + reputation_score
         

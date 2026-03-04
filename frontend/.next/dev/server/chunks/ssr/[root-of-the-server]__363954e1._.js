@@ -591,12 +591,11 @@ function Home() {
                         className: "grid grid-cols-1 md:grid-cols-3 gap-8",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col",
+                                className: "bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
-                                        src: "/images/featured1.jpg",
-                                        alt: "Property 1",
-                                        className: "rounded-xl mb-4 h-48 object-cover"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                        className: "rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#23272b] to-[#5bc0eb] flex items-center justify-center text-6xl",
+                                        children: "🏠"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
                                         lineNumber: 68,
@@ -642,15 +641,14 @@ function Home() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col",
+                                className: "bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
-                                        src: "/images/featured2.jpg",
-                                        alt: "Property 2",
-                                        className: "rounded-xl mb-4 h-48 object-cover"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                        className: "rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#b3c6e7] to-[#f7ca18] flex items-center justify-center text-6xl",
+                                        children: "🏰"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 77,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
@@ -658,7 +656,7 @@ function Home() {
                                         children: "Luxury Villa"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 78,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -666,7 +664,7 @@ function Home() {
                                         children: "$250,000 · For Sale"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 79,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -674,7 +672,7 @@ function Home() {
                                         children: "Karen, Nairobi"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 80,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -683,25 +681,24 @@ function Home() {
                                         children: "View Details"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 81,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/pages/index.tsx",
-                                lineNumber: 74,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col",
+                                className: "bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
-                                        src: "/images/featured3.jpg",
-                                        alt: "Property 3",
-                                        className: "rounded-xl mb-4 h-48 object-cover"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                        className: "rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#5bc0eb] to-[#e6e2d3] flex items-center justify-center text-6xl",
+                                        children: "🏢"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 82,
+                                        lineNumber: 86,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
@@ -709,7 +706,7 @@ function Home() {
                                         children: "Modern Studio"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 87,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -717,7 +714,7 @@ function Home() {
                                         children: "$900/mo · For Rent"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 88,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -725,7 +722,7 @@ function Home() {
                                         children: "Westlands, Nairobi"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 89,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -734,13 +731,13 @@ function Home() {
                                         children: "View Details"
                                     }, void 0, false, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 90,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/pages/index.tsx",
-                                lineNumber: 81,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -770,7 +767,7 @@ function Home() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/pages/index.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 99,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -778,13 +775,13 @@ function Home() {
                                     children: "Your dashboard"
                                 }, void 0, false, {
                                     fileName: "[project]/frontend/pages/index.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 100,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/pages/index.tsx",
-                            lineNumber: 94,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -798,7 +795,7 @@ function Home() {
                                             children: "Logged in as"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 100,
+                                            lineNumber: 104,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -810,7 +807,7 @@ function Home() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 105,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -818,39 +815,57 @@ function Home() {
                                             children: user?.role.replace('_', ' ').toUpperCase()
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 102,
+                                            lineNumber: 106,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/pages/index.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 103,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                                    onClick: handleLogout,
-                                    className: "px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition",
-                                    children: "Sign Out"
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                    className: "flex gap-2",
+                                    children: [
+                                        user?.role === 'admin' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/admin/dashboard",
+                                            className: "px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition inline-block",
+                                            children: "Admin Panel"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/pages/index.tsx",
+                                            lineNumber: 112,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                                            onClick: handleLogout,
+                                            className: "px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition",
+                                            children: "Sign Out"
+                                        }, void 0, false, {
+                                            fileName: "[project]/frontend/pages/index.tsx",
+                                            lineNumber: 116,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/frontend/pages/index.tsx",
-                                    lineNumber: 106,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/frontend/pages/index.tsx",
-                            lineNumber: 98,
+                            lineNumber: 102,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/frontend/pages/index.tsx",
-                    lineNumber: 93,
+                    lineNumber: 97,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/frontend/pages/index.tsx",
-                lineNumber: 92,
+                lineNumber: 96,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -869,7 +884,7 @@ function Home() {
                                             children: "👤"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 122,
+                                            lineNumber: 133,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
@@ -877,7 +892,7 @@ function Home() {
                                             children: "Tenant App"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 134,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -885,7 +900,7 @@ function Home() {
                                             children: "Discover properties, manage payments, and track your savings journey."
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 124,
+                                            lineNumber: 135,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -896,7 +911,7 @@ function Home() {
                                                     children: "8 Features"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/pages/index.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 137,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -904,24 +919,24 @@ function Home() {
                                                     children: "→"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/pages/index.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 138,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 136,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/pages/index.tsx",
-                                    lineNumber: 121,
+                                    lineNumber: 132,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/pages/index.tsx",
-                                lineNumber: 120,
+                                lineNumber: 131,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -934,7 +949,7 @@ function Home() {
                                             children: "🏢"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 146,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
@@ -942,7 +957,7 @@ function Home() {
                                             children: "Landlord Dashboard"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 136,
+                                            lineNumber: 147,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -950,7 +965,7 @@ function Home() {
                                             children: "Manage properties, pricing, schedules, and analytics with AI insights."
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 137,
+                                            lineNumber: 148,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -961,7 +976,7 @@ function Home() {
                                                     children: "5 Features"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/pages/index.tsx",
-                                                    lineNumber: 139,
+                                                    lineNumber: 150,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -969,24 +984,24 @@ function Home() {
                                                     children: "→"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/pages/index.tsx",
-                                                    lineNumber: 140,
+                                                    lineNumber: 151,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 138,
+                                            lineNumber: 149,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/pages/index.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 145,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/pages/index.tsx",
-                                lineNumber: 133,
+                                lineNumber: 144,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$frontend$2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -999,7 +1014,7 @@ function Home() {
                                             children: "🔧"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 159,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
@@ -1007,7 +1022,7 @@ function Home() {
                                             children: "Service Portal"
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 149,
+                                            lineNumber: 160,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1015,7 +1030,7 @@ function Home() {
                                             children: "Browse services, manage bookings, maintenance, and storage inventory."
                                         }, void 0, false, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 161,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1026,7 +1041,7 @@ function Home() {
                                                     children: "3 Services"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/pages/index.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 163,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -1034,30 +1049,30 @@ function Home() {
                                                     children: "→"
                                                 }, void 0, false, {
                                                     fileName: "[project]/frontend/pages/index.tsx",
-                                                    lineNumber: 153,
+                                                    lineNumber: 164,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/frontend/pages/index.tsx",
-                                            lineNumber: 151,
+                                            lineNumber: 162,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/frontend/pages/index.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 158,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/frontend/pages/index.tsx",
-                                lineNumber: 146,
+                                lineNumber: 157,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/pages/index.tsx",
-                        lineNumber: 118,
+                        lineNumber: 129,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1068,7 +1083,7 @@ function Home() {
                                 children: "Platform Highlights"
                             }, void 0, false, {
                                 fileName: "[project]/frontend/pages/index.tsx",
-                                lineNumber: 161,
+                                lineNumber: 172,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1082,7 +1097,7 @@ function Home() {
                                                 children: "🤖"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 164,
+                                                lineNumber: 175,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h4", {
@@ -1090,7 +1105,7 @@ function Home() {
                                                 children: "AI Agents"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 165,
+                                                lineNumber: 176,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1098,13 +1113,13 @@ function Home() {
                                                 children: "Smart recommendations powered by machine learning"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 166,
+                                                lineNumber: 177,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 174,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1115,7 +1130,7 @@ function Home() {
                                                 children: "⛓️"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 180,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h4", {
@@ -1123,7 +1138,7 @@ function Home() {
                                                 children: "On-Chain"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 170,
+                                                lineNumber: 181,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1131,13 +1146,13 @@ function Home() {
                                                 children: "Secure Hedera blockchain transactions"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 171,
+                                                lineNumber: 182,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 179,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1148,7 +1163,7 @@ function Home() {
                                                 children: "💰"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 174,
+                                                lineNumber: 185,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h4", {
@@ -1156,7 +1171,7 @@ function Home() {
                                                 children: "FIND Token"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 186,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1164,13 +1179,13 @@ function Home() {
                                                 children: "Native cryptocurrency for platform rewards"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 176,
+                                                lineNumber: 187,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 184,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1181,7 +1196,7 @@ function Home() {
                                                 children: "📊"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 179,
+                                                lineNumber: 190,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h4", {
@@ -1189,7 +1204,7 @@ function Home() {
                                                 children: "Analytics"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 191,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1197,31 +1212,31 @@ function Home() {
                                                 children: "Real-time market insights and trends"
                                             }, void 0, false, {
                                                 fileName: "[project]/frontend/pages/index.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 192,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/frontend/pages/index.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 189,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/frontend/pages/index.tsx",
-                                lineNumber: 162,
+                                lineNumber: 173,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/frontend/pages/index.tsx",
-                        lineNumber: 160,
+                        lineNumber: 171,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/frontend/pages/index.tsx",
-                lineNumber: 117,
+                lineNumber: 128,
                 columnNumber: 7
             }, this)
         ]

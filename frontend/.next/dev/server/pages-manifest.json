@@ -3,12 +3,7 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/landlord": "pages/landlord.js",
-  "/landlord/listings": "pages/landlord/listings.js",
+  "/admin": "pages/admin.js",
   "/login": "pages/login.js",
-  "/service": "pages/service.js",
-  "/service/maintenance": "pages/service/maintenance.js",
-  "/service/movers": "pages/service/movers.js",
-  "/tenant": "pages/tenant.js",
-  "/tenant/calendar": "pages/tenant/calendar.js"
+  "/tenant": "pages/tenant.js"
 }

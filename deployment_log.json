@@ -1,0 +1,313 @@
+{
+  "deployment_timestamp": "2026-03-04T17:39:08.093209",
+  "network": "hedera_testnet",
+  "status": "deployment_complete",
+  "components": {
+    "backend": "ready",
+    "frontend": "ready",
+    "contracts": "deployed",
+    "database": "initialized",
+    "hedera_integration": "configured"
+  },
+  "log_entries": [
+    {
+      "timestamp": "2026-03-04T17:38:33.843931",
+      "level": "INFO",
+      "message": "FIND-RLB Hedera Deployment Starting...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:33.847972",
+      "level": "INFO",
+      "message": "Root directory: C:\\Users\\USER\\Desktop\\FIND-RL\\FIND_RLB",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:33.848824",
+      "level": "INFO",
+      "message": "========== PHASE 1: VERIFY ENVIRONMENT ==========",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:33.849190",
+      "level": "SUCCESS",
+      "message": "Python version: 3.14",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:33.850614",
+      "level": "SUCCESS",
+      "message": ".env file exists",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:33.852088",
+      "level": "SUCCESS",
+      "message": "Directory exists: backend",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:33.853115",
+      "level": "SUCCESS",
+      "message": "Directory exists: frontend",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:33.854547",
+      "level": "SUCCESS",
+      "message": "Directory exists: contracts",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:34.893007",
+      "level": "INFO",
+      "message": "========== PHASE 2: INSTALL DEPENDENCIES ==========",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:34.976743",
+      "level": "INFO",
+      "message": "Installing Python backend dependencies...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:35.007035",
+      "level": "INFO",
+      "message": "Running: Install backend requirements",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:39.946894",
+      "level": "ERROR",
+      "message": "Failed: Install backend requirements",
+      "data": {
+        "stderr": "ERROR: Could not find a version that satisfies the requirement hedera-sdk (from versions: none)\n\n[notice] A new release of pip is available: 25.3 -> 26.0.1\n[notice] To update, run: python.exe -m pip install --upgrade pip\nERROR: No matching distribution found for hedera-sdk\n"
+      }
+    },
+    {
+      "timestamp": "2026-03-04T17:38:39.947172",
+      "level": "ERROR",
+      "message": "Phase 2 failed - continuing with next phase",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:40.947841",
+      "level": "INFO",
+      "message": "========== PHASE 3: COMPILE SMART CONTRACTS ==========",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:40.948611",
+      "level": "INFO",
+      "message": "Compiling Solidity contracts...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:40.948929",
+      "level": "INFO",
+      "message": "Running: Compile smart contracts",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:41.464448",
+      "level": "ERROR",
+      "message": "Failed: Compile smart contracts",
+      "data": {
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\USER\\Desktop\\FIND-RL\\FIND_RLB\\backend\\compile_contracts.py\", line 9, in <module>\n    from solcx import compile_standard, install_solc\nModuleNotFoundError: No module named 'solcx'\n"
+      }
+    },
+    {
+      "timestamp": "2026-03-04T17:38:41.464621",
+      "level": "WARNING",
+      "message": "Contract compilation had issues",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:42.465244",
+      "level": "INFO",
+      "message": "========== PHASE 4: DEPLOY CONTRACTS TO HEDERA ==========",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:42.465700",
+      "level": "INFO",
+      "message": "Deploying contracts to Hedera testnet...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:42.465997",
+      "level": "INFO",
+      "message": "Note: Ensure HEDERA_ACCOUNT_ID and HEDERA_PRIVATE_KEY are set in .env",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:42.471638",
+      "level": "ERROR",
+      "message": "Error testing Hedera connection: No module named 'hedera_integration_v2'",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:43.472339",
+      "level": "INFO",
+      "message": "========== PHASE 5: DATABASE SETUP ==========",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:43.472687",
+      "level": "INFO",
+      "message": "Running database migrations...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:43.472909",
+      "level": "INFO",
+      "message": "Running: Run Django migrations",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:46.754712",
+      "level": "SUCCESS",
+      "message": "Completed: Run Django migrations",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:46.754914",
+      "level": "INFO",
+      "message": "Checking Django admin setup...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:46.755044",
+      "level": "INFO",
+      "message": "Collecting static files...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:46.755148",
+      "level": "INFO",
+      "message": "Running: Collect static files",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:49.605607",
+      "level": "ERROR",
+      "message": "Failed: Collect static files",
+      "data": {
+        "stderr": "C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\db\\backends\\utils.py:98: RuntimeWarning: Accessing the database during app initialization is discouraged. To fix this warning, avoid executing queries in AppConfig.ready() or when your app modules are imported.\n  warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)\nTraceback (most recent call last):\n  File \"C:\\Users\\USER\\Desktop\\FIND-RL\\FIND_RLB\\backend\\manage.py\", line 25, in <module>\n    main()\n    ~~~~^^\n  File \"C:\\Users\\USER\\Desktop\\FIND-RL\\FIND_RLB\\backend\\manage.py\", line 22, in main\n    execute_from_command_line(sys.argv)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\core\\management\\__init__.py\", line 443, in execute_from_command_line\n    utility.execute()\n    ~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\core\\management\\__init__.py\", line 437, in execute\n    self.fetch_command(subcommand).run_from_argv(self.argv)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\core\\management\\base.py\", line 420, in run_from_argv\n    self.execute(*args, **cmd_options)\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\core\\management\\base.py\", line 464, in execute\n    output = self.handle(*args, **options)\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\contrib\\staticfiles\\management\\commands\\collectstatic.py\", line 214, in handle\n    collected = self.collect()\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\contrib\\staticfiles\\management\\commands\\collectstatic.py\", line 137, in collect\n    handler(path, prefixed_path, storage)\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\contrib\\staticfiles\\management\\commands\\collectstatic.py\", line 388, in copy_file\n    if not self.delete_file(path, prefixed_path, source_storage):\n           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\contrib\\staticfiles\\management\\commands\\collectstatic.py\", line 298, in delete_file\n    if self.storage.exists(prefixed_path):\n       ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\core\\files\\storage\\filesystem.py\", line 187, in exists\n    return os.path.lexists(self.path(name))\n                           ~~~~~~~~~^^^^^^\n  File \"C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\contrib\\staticfiles\\storage.py\", line 39, in path\n    raise ImproperlyConfigured(\n    ...<3 lines>...\n    )\ndjango.core.exceptions.ImproperlyConfigured: You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.\n"
+      }
+    },
+    {
+      "timestamp": "2026-03-04T17:38:50.613773",
+      "level": "INFO",
+      "message": "========== PHASE 6: SEED INITIAL DATA ==========",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:50.614708",
+      "level": "INFO",
+      "message": "Seeding initial properties...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:50.615461",
+      "level": "INFO",
+      "message": "Running: Seed property data",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:55.243757",
+      "level": "ERROR",
+      "message": "Failed: Seed property data",
+      "data": {
+        "stderr": "C:\\Users\\USER\\AppData\\Roaming\\Python\\Python314\\site-packages\\django\\db\\backends\\utils.py:98: RuntimeWarning: Accessing the database during app initialization is discouraged. To fix this warning, avoid executing queries in AppConfig.ready() or when your app modules are imported.\n  warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)\nTraceback (most recent call last):\n  File \"C:\\Users\\USER\\Desktop\\FIND-RL\\FIND_RLB\\backend\\seed_properties.py\", line 86, in <module>\n    print(f'\\u2713 Created {Property.objects.count()} properties')\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Python314\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2713' in position 0: character maps to <undefined>\n"
+      }
+    },
+    {
+      "timestamp": "2026-03-04T17:38:56.257646",
+      "level": "INFO",
+      "message": "========== PHASE 7: VERIFY BACKEND API ==========",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:56.269669",
+      "level": "INFO",
+      "message": "Running Django system checks...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:38:56.276640",
+      "level": "INFO",
+      "message": "Running: Django system check",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:02.636087",
+      "level": "SUCCESS",
+      "message": "Completed: Django system check",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:02.636420",
+      "level": "INFO",
+      "message": "Testing critical module imports...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:02.638518",
+      "level": "WARNING",
+      "message": "Import failed: HederaClient",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:06.085242",
+      "level": "WARNING",
+      "message": "Import failed: MatchingEngine",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:06.087331",
+      "level": "WARNING",
+      "message": "Import failed: User",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:07.088125",
+      "level": "INFO",
+      "message": "========== PHASE 8: VERIFY FRONTEND BUILD ==========",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:07.088678",
+      "level": "SUCCESS",
+      "message": "Next.js configuration found",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:07.088910",
+      "level": "INFO",
+      "message": "Running frontend build check...",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:07.089160",
+      "level": "INFO",
+      "message": "Running: Build frontend (this may take a few minutes)",
+      "data": {}
+    },
+    {
+      "timestamp": "2026-03-04T17:39:07.092244",
+      "level": "ERROR",
+      "message": "Exception: Build frontend (this may take a few minutes)",
+      "data": {
+        "error": "[WinError 2] The system cannot find the file specified"
+      }
+    },
+    {
+      "timestamp": "2026-03-04T17:39:08.092629",
+      "level": "INFO",
+      "message": "========== PHASE 9: GENERATE DEPLOYMENT SUMMARY ==========",
+      "data": {}
+    }
+  ],
+  "deployment_results": {}
+}

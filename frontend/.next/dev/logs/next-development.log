@@ -1,23 +1,1200 @@
-[00:00:16.801] Server  LOG     ✓ Ready in 16s
-[00:00:19.887] Server  LOG     ○ Compiling / ...
-[00:00:43.103] Server  LOG     ○ Compiling /_error ...
-[00:45:36.695] Server  LOG     ✓ Compiled in 3.9s
-[00:47:53.533] Browser LOG     Refreshing page data due to server-side change
-[00:47:55.948] Server  LOG     ✓ Compiled in 3.9s
-[00:47:57.405] Browser ERROR   ./frontend/pages/tenant.tsx:26:19
-Parsing ecmascript source code failed
-  24 |     {
-  25 |       icon: '💳',
-> 26 |       "use client";
-     |                   ^
-  27 |
-  28 |       import React from 'react';
-  29 |       import { ProtectedPage } from '../../frontend/components/ProtectedPage' || require('../../frontend/components/ProtectedPage');
+[00:00:49.250] Server  LOG     ✓ Ready in 37.7s
+[00:04:48.558] Server  LOG     ○ Compiling / ...
+[00:15:40.658] Server  LOG     ✓ Compiled in 68.1s
+[00:15:55.252] Server  LOG     ✓ Finished writing to filesystem cache in 12.9s
+[00:19:56.771] Server  LOG     ○ Compiling /admin ...
+[00:21:18.229] Browser ERROR   %o
 
-Expected a semicolon
-[00:48:15.247] Server  LOG     ✓ Compiled in 6.5s
-[00:48:26.493] Server  LOG     ○ Compiling /tenant ...
-[00:48:49.308] Server  LOG     ✓ Compiled in 942ms
-[00:49:23.327] Server  LOG     ✓ Finished filesystem cache database compaction in 64s
-[00:49:24.704] Server  LOG     ✓ Finished writing to filesystem cache in 63s
-[01:05:14.038] Server  LOG     ✓ Finished writing to filesystem cache in 58s
+%s
+
+%s
+ {} The above error occurred in the <ForwardRef(LinkComponent)> component. React will try to recreate this component tree from scratch using the error boundary you provided, PagesDevOverlayErrorBoundary.
+[00:22:36.123] Server  LOG     ✓ Finished writing to filesystem cache in 39.4s
+[00:25:12.723] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:13.333] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:18.936] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:19.566] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:20.106] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:21.472] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:22.784] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:22.812] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:23.151] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:23.190] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:23.212] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:23.351] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:24.197] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:24.224] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:24.475] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:24.906] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:40.056] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:57.774] Server  LOG     ○ Compiling /_error ...
+[00:25:58.470] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:58.478] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:58.727] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:58.751] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:58.771] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:59.641] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:59.650] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:59.657] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:59.957] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:25:59.972] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:26:00.271] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:26:00.278] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:26:00.304] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:26:00.915] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:26:00.922] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:26:01.620] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:26:01.686] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:26:03.043] Server  LOG     ✓ Finished writing to filesystem cache in 29.9s
+[00:26:13.208] Server  LOG     ✓ Finished writing to filesystem cache in 20.6s
+[00:31:01.986] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:01.986] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:01.986] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:07.022] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:07.022] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:07.022] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:07.022] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:07.022] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:07.023] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:07.023] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:07.023] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:26.731] Browser ERROR   uncaughtError: Error: ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:31:28.211] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:47.099] Server  LOG     ✓ Compiled in 19.6s
+[00:31:48.208] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:31:48.407] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:03.347] Server  LOG     ✓ Finished writing to filesystem cache in 13.3s
+[00:32:28.119] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:30.390] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:33.145] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:33.145] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:36.587] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:36.587] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:36.587] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:36.587] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:36.587] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:36.587] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:36.587] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:36.587] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:44.675] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:48.742] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:32:49.936] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:49.961] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:49.971] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.160] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.184] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.200] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.215] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.226] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.236] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.247] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.263] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.275] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.285] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.294] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.304] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.313] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:32:50.323] Server  ERROR   ⨯ ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:00.571] Browser ERROR   uncaughtError: Error: ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:04.975] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:10.950] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:25.795] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:26.229] Server  LOG     ✓ Finished writing to filesystem cache in 10.9s
+[00:37:37.101] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:47:46.434] Server  LOG     ✓ Finished writing to filesystem cache in 104s
+[00:47:50.845] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:47:50.845] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found
+[00:48:04.946] Server  LOG     ✓ Finished writing to filesystem cache in 35.6s
+[00:49:26.843] Browser ERROR   ./frontend/pages/admin/index.tsx:3:1
+Module not found: Can't resolve 'lucide-react'
+  1 | import React, { useState, useEffect } from 'react';
+  2 | import Link from 'next/link';
+> 3 | import { BarChart3, TrendingUp, Zap, Users, Settings, LogOut, ChevronRight } from 'lucide-react';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | interface AdminStats {
+  6 |   total_users: number;
+
+https://nextjs.org/docs/messages/module-not-found

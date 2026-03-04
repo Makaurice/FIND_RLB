@@ -5,29 +5,14 @@ self.__BUILD_MANIFEST = {
   "/_error": [
     "static/chunks/pages/_error.js"
   ],
-  "/landlord": [
-    "static/chunks/pages/landlord.js"
-  ],
-  "/landlord/listings": [
-    "static/chunks/pages/landlord/listings.js"
+  "/admin": [
+    "static/chunks/pages/admin.js"
   ],
   "/login": [
     "static/chunks/pages/login.js"
   ],
-  "/service": [
-    "static/chunks/pages/service.js"
-  ],
-  "/service/maintenance": [
-    "static/chunks/pages/service/maintenance.js"
-  ],
-  "/service/movers": [
-    "static/chunks/pages/service/movers.js"
-  ],
   "/tenant": [
     "static/chunks/pages/tenant.js"
-  ],
-  "/tenant/calendar": [
-    "static/chunks/pages/tenant/calendar.js"
   ],
   "__rewrites": {
     "afterFiles": [],
@@ -38,6 +23,9 @@ self.__BUILD_MANIFEST = {
     "/",
     "/_app",
     "/_error",
+    "/admin",
+    "/admin/analytics",
+    "/admin/dashboard",
     "/ai/landlord",
     "/ai/match",
     "/ai/tenant",

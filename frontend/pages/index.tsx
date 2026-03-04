@@ -63,23 +63,27 @@ export default function Home() {
       <section className="max-w-6xl mx-auto py-16 px-4">
         <h2 className="text-4xl font-bold text-[#23272b] mb-8 text-center tracking-tight">Featured Properties</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Example featured properties - replace with dynamic data */}
-          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col">
-            <img src="/images/featured1.jpg" alt="Property 1" className="rounded-xl mb-4 h-48 object-cover" />
+          {/* Featured Property 1 */}
+          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300">
+            <div className="rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#23272b] to-[#5bc0eb] flex items-center justify-center text-6xl">🏠</div>
             <h3 className="text-2xl font-bold text-[#23272b] mb-2">Oceanview Apartment</h3>
             <p className="text-[#5bc0eb] font-semibold mb-2">$1,800/mo · For Rent</p>
             <p className="text-[#23272b] mb-4">Mombasa, Kenya</p>
             <Link href="/tenant/search" className="mt-auto px-4 py-2 bg-gradient-to-r from-[#23272b] via-[#5bc0eb] to-[#e6e2d3] text-white rounded-lg font-bold shadow hover:from-[#f7ca18] hover:to-[#5bc0eb] transition text-center">View Details</Link>
           </div>
-          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col">
-            <img src="/images/featured2.jpg" alt="Property 2" className="rounded-xl mb-4 h-48 object-cover" />
+          
+          {/* Featured Property 2 */}
+          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300">
+            <div className="rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#b3c6e7] to-[#f7ca18] flex items-center justify-center text-6xl">🏰</div>
             <h3 className="text-2xl font-bold text-[#23272b] mb-2">Luxury Villa</h3>
             <p className="text-[#f7ca18] font-semibold mb-2">$250,000 · For Sale</p>
             <p className="text-[#23272b] mb-4">Karen, Nairobi</p>
             <Link href="/tenant/search" className="mt-auto px-4 py-2 bg-gradient-to-r from-[#23272b] via-[#5bc0eb] to-[#e6e2d3] text-white rounded-lg font-bold shadow hover:from-[#f7ca18] hover:to-[#5bc0eb] transition text-center">View Details</Link>
           </div>
-          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col">
-            <img src="/images/featured3.jpg" alt="Property 3" className="rounded-xl mb-4 h-48 object-cover" />
+          
+          {/* Featured Property 3 */}
+          <div className="bg-gradient-to-br from-[#f8fafc] via-[#e6e2d3] to-[#b3c6e7] rounded-2xl shadow-xl p-6 border border-[#e6e2d3] flex flex-col hover:shadow-2xl hover:scale-105 transition duration-300">
+            <div className="rounded-xl mb-4 h-48 w-full bg-gradient-to-br from-[#5bc0eb] to-[#e6e2d3] flex items-center justify-center text-6xl">🏢</div>
             <h3 className="text-2xl font-bold text-[#23272b] mb-2">Modern Studio</h3>
             <p className="text-[#5bc0eb] font-semibold mb-2">$900/mo · For Rent</p>
             <p className="text-[#23272b] mb-4">Westlands, Nairobi</p>
@@ -103,12 +107,19 @@ export default function Home() {
                 {user?.role.replace('_', ' ').toUpperCase()}
               </span>
             </div>
-            <button
-              onClick={handleLogout}
-              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition"
-            >
-              Sign Out
-            </button>
+            <div className="flex gap-2">
+              {user?.role === 'admin' && (
+                <Link href="/admin/dashboard" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition inline-block">
+                  Admin Panel
+                </Link>
+              )}
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-semibold transition"
+              >
+                Sign Out
+              </button>
+            </div>
           </div>
         </div>
       </div>

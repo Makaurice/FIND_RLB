@@ -16,20 +16,44 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from api.views import health_check, api_status, system_info
+from api.analytics import (
+    dashboard_analytics, user_metrics, property_metrics, 
+    blockchain_metrics, recent_activities, system_status
+)
+
 urlpatterns = [
+    # Admin
     path('admin/', admin.site.urls),
+    
+    # Health & Status endpoints
+    path('api/health/', health_check, name='health_check'),
+    path('api/status/', api_status, name='api_status'),
+    path('api/system/', system_info, name='system_info'),
+    
+    # Analytics endpoints
+    path('api/admin/analytics/', dashboard_analytics, name='dashboard_analytics'),
+    path('api/admin/users/', user_metrics, name='user_metrics'),
+    path('api/admin/properties/', property_metrics, name='property_metrics'),
+    path('api/admin/blockchain/', blockchain_metrics, name='blockchain_metrics'),
+    path('api/admin/activities/', recent_activities, name='recent_activities'),
+    path('api/admin/system-status/', system_status, name='system_status'),
+    
+    # App URLs
     path('api/auth/', include('accounts.urls')),
-    path('api/', include('property.urls')),
-    # Commented out problematic imports for now
-    # path('api/', include('tenant.urls')),
+    path('api/properties/', include('property.urls')),
+    
+    # Commented out for now - can be enabled as modules are completed
+    # path('api/tenant/', include('tenant.urls')),
     # path('api/landlord/', include('landlord.urls')),
     # path('api/service/', include('service.urls')),
     # path('api/contracts/', include('api.urls_contracts')),
     # path('api/token/', include('api.urls_token')),
     # path('api/ai-agents/', include('api.urls_ai_agents')),
     # path('api/wallet/', include('api.urls_wallet')),
-    path('api/search/', include('api.urls_search')),
+    # path('api/search/', include('api.urls_search')),
     # path('api/community/', include('api.urls_community')),
     # path('api/p2p/', include('api.urls_p2p_community')),
     # path('api/rewards/', include('api.urls_rewards')),
 ]
+

@@ -8,6 +8,7 @@ from ai_agents.guardian_agent import GuardianAIAgent
 from ai_agents.moving_service_agent import MovingServiceAgent
 from ai_agents.savings_to_own_agent import SavingsToOwnAgent
 from ai_agents.p2p_community_agent import P2PCommunityAgent
+from ai_agents.customer_care_agent import CustomerCareAgent
 from backend.hedera_auth import generate_challenge, verify_signature
 from backend.contracts import call_hedera_contract, get_contract
 from backend.hedera_integration_v2 import get_hedera_client
@@ -222,6 +223,26 @@ class P2PCommunityAgentView(APIView):
             else:
                 result = {'error': 'unknown action'}
             
+            return Response(result, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class CustomerCareAgentView(APIView):
+    """AI Customer Care Agent for 24/7 support, blockchain actions, and Hedera logging."""
+    def post(self, request):
+        try:
+            message = request.data.get('message')
+            user_id = request.data.get('user_id')
+            session_id = request.data.get('session_id')
+            context = request.data.get('context', {})
+
+            if not message or not user_id:
+                return Response({'error': 'message and user_id required'}, status=status.HTTP_400_BAD_REQUEST)
+
+            agent = CustomerCareAgent(user_id, session_id)
+            result = agent.process_message(message, context)
+
             return Response(result, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

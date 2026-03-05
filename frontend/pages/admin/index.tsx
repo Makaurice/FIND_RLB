@@ -99,82 +99,74 @@ export default function AdminHome() {
         {/* Main Navigation Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Dashboard Card */}
-          <Link href="/admin/dashboard">
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-blue-500/30 rounded-xl p-8 hover:border-blue-500/60 hover:shadow-xl transition-all cursor-pointer group">
-              <div className="flex items-start justify-between mb-4">
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-4 rounded-lg group-hover:shadow-lg transition-all">
-                  <BarChart3 className="w-8 h-8 text-white" />
-                </div>
-                <ChevronRight className="w-6 h-6 text-slate-500 group-hover:text-blue-400 transition-colors" />
+          <Link href="/admin/dashboard" className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-blue-500/30 rounded-xl p-8 hover:border-blue-500/60 hover:shadow-xl transition-all cursor-pointer group block">
+            <div className="flex items-start justify-between mb-4">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-4 rounded-lg group-hover:shadow-lg transition-all">
+                <BarChart3 className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Main Dashboard</h3>
-              <p className="text-slate-400 mb-4">
-                Real-time overview with analytics, charts, and system performance metrics
-              </p>
-              <div className="flex items-center space-x-2 text-blue-400">
-                <span className="text-sm font-medium">Open Dashboard</span>
-                <ChevronRight className="w-4 h-4" />
-              </div>
+              <ChevronRight className="w-6 h-6 text-slate-500 group-hover:text-blue-400 transition-colors" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">Main Dashboard</h3>
+            <p className="text-slate-400 mb-4">
+              Real-time overview with analytics, charts, and system performance metrics
+            </p>
+            <div className="flex items-center space-x-2 text-blue-400">
+              <span className="text-sm font-medium">Open Dashboard</span>
+              <ChevronRight className="w-4 h-4" />
             </div>
           </Link>
 
           {/* Advanced Analytics Card */}
-          <Link href="/admin/analytics">
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-purple-500/30 rounded-xl p-8 hover:border-purple-500/60 hover:shadow-xl transition-all cursor-pointer group">
-              <div className="flex items-start justify-between mb-4">
-                <div className="bg-gradient-to-br from-purple-600 to-purple-800 p-4 rounded-lg group-hover:shadow-lg transition-all">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <ChevronRight className="w-6 h-6 text-slate-500 group-hover:text-purple-400 transition-colors" />
+          <Link href="/admin/analytics" className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-purple-500/30 rounded-xl p-8 hover:border-purple-500/60 hover:shadow-xl transition-all cursor-pointer group block">
+            <div className="flex items-start justify-between mb-4">
+              <div className="bg-gradient-to-br from-purple-600 to-purple-800 p-4 rounded-lg group-hover:shadow-lg transition-all">
+                <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Advanced Analytics</h3>
-              <p className="text-slate-400 mb-4">
-                Detailed insights: user trends, property distribution, blockchain metrics
-              </p>
-              <div className="flex items-center space-x-2 text-purple-400">
-                <span className="text-sm font-medium">View Analytics</span>
-                <ChevronRight className="w-4 h-4" />
-              </div>
+              <ChevronRight className="w-6 h-6 text-slate-500 group-hover:text-purple-400 transition-colors" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">Advanced Analytics</h3>
+            <p className="text-slate-400 mb-4">
+              Detailed insights: user trends, property distribution, blockchain metrics
+            </p>
+            <div className="flex items-center space-x-2 text-purple-400">
+              <span className="text-sm font-medium">View Analytics</span>
+              <ChevronRight className="w-4 h-4" />
             </div>
           </Link>
 
           {/* Settings Card */}
-          <Link href="/admin/settings">
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-emerald-500/30 rounded-xl p-8 hover:border-emerald-500/60 hover:shadow-xl transition-all cursor-pointer group">
-              <div className="flex items-start justify-between mb-4">
-                <div className="bg-gradient-to-br from-emerald-600 to-emerald-800 p-4 rounded-lg group-hover:shadow-lg transition-all">
-                  <Settings className="w-8 h-8 text-white" />
-                </div>
-                <ChevronRight className="w-6 h-6 text-slate-500 group-hover:text-emerald-400 transition-colors" />
+          <Link href="/admin/settings" className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-emerald-500/30 rounded-xl p-8 hover:border-emerald-500/60 hover:shadow-xl transition-all cursor-pointer group block">
+            <div className="flex items-start justify-between mb-4">
+              <div className="bg-gradient-to-br from-emerald-600 to-emerald-800 p-4 rounded-lg group-hover:shadow-lg transition-all">
+                <Settings className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Admin Settings</h3>
-              <p className="text-slate-400 mb-4">
-                Manage platform configuration, users, and system preferences
-              </p>
-              <div className="flex items-center space-x-2 text-emerald-400">
-                <span className="text-sm font-medium">Configure</span>
-                <ChevronRight className="w-4 h-4" />
-              </div>
+              <ChevronRight className="w-6 h-6 text-slate-500 group-hover:text-emerald-400 transition-colors" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">Admin Settings</h3>
+            <p className="text-slate-400 mb-4">
+              Manage platform configuration, users, and system preferences
+            </p>
+            <div className="flex items-center space-x-2 text-emerald-400">
+              <span className="text-sm font-medium">Configure</span>
+              <ChevronRight className="w-4 h-4" />
             </div>
           </Link>
 
           {/* Users Management Card */}
-          <Link href="/admin/users">
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-pink-500/30 rounded-xl p-8 hover:border-pink-500/60 hover:shadow-xl transition-all cursor-pointer group">
-              <div className="flex items-start justify-between mb-4">
-                <div className="bg-gradient-to-br from-pink-600 to-pink-800 p-4 rounded-lg group-hover:shadow-lg transition-all">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <ChevronRight className="w-6 h-6 text-slate-500 group-hover:text-pink-400 transition-colors" />
+          <Link href="/admin/users" className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-pink-500/30 rounded-xl p-8 hover:border-pink-500/60 hover:shadow-xl transition-all cursor-pointer group block">
+            <div className="flex items-start justify-between mb-4">
+              <div className="bg-gradient-to-br from-pink-600 to-pink-800 p-4 rounded-lg group-hover:shadow-lg transition-all">
+                <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Users Management</h3>
-              <p className="text-slate-400 mb-4">
-                View, manage, and verify platform users and their roles
-              </p>
-              <div className="flex items-center space-x-2 text-pink-400">
-                <span className="text-sm font-medium">Manage Users</span>
-                <ChevronRight className="w-4 h-4" />
-              </div>
+              <ChevronRight className="w-6 h-6 text-slate-500 group-hover:text-pink-400 transition-colors" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">Users Management</h3>
+            <p className="text-slate-400 mb-4">
+              View, manage, and verify platform users and their roles
+            </p>
+            <div className="flex items-center space-x-2 text-pink-400">
+              <span className="text-sm font-medium">Manage Users</span>
+              <ChevronRight className="w-4 h-4" />
             </div>
           </Link>
         </div>

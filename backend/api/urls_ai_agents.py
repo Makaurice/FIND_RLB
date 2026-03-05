@@ -2,7 +2,7 @@ from django.urls import path
 from ai_agent_api import (
     TenantAgentView, LandlordAgentView, MatchingEngineView, TopMatchesView, 
     AdvancedTenantRecommendationView, GuardianAgentView, MovingServiceAgentView, 
-    SavingsToOwnAgentView, P2PCommunityAgentView, HederaAuthView
+    SavingsToOwnAgentView, P2PCommunityAgentView, CustomerCareAgentView, HederaAuthView
 )
 
 urlpatterns = [
@@ -16,4 +16,5 @@ urlpatterns = [
     path('ai/savings-to-own', SavingsToOwnAgentView.as_view()),
     path('auth/hedera', HederaAuthView.as_view()),
     path('ai/p2p-community', P2PCommunityAgentView.as_view()),
+    path('ai/customer-care', CustomerCareAgentView.as_view()),
 ]

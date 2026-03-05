@@ -9,3 +9,4 @@ hedera-sdk
 ipfshttpclient
 web3
 cryptography
+openai

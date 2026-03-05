@@ -1,0 +1,17 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/landlord/pricing": [
+      "static/chunks/2ed3fc67d798d028.js",
+      "static/chunks/21bacc4485f02580.js",
+      "static/chunks/882ab1900913a325.js",
+      "static/chunks/19c17ff626029a6e.js",
+      "static/chunks/turbopack-236aeca8fb790232.js"
+    ]
+  },
+  "ampFirstPages": []
+}

@@ -1,0 +1,7 @@
+__turbopack_load_page_chunks__("/tenant/savings", [
+  "static/chunks/5b7c784c839c29e3.js",
+  "static/chunks/21bacc4485f02580.js",
+  "static/chunks/882ab1900913a325.js",
+  "static/chunks/19c17ff626029a6e.js",
+  "static/chunks/turbopack-7f61390d32f41b34.js"
+])

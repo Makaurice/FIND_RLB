@@ -1,0 +1,7 @@
+__turbopack_load_page_chunks__("/service/warehousing", [
+  "static/chunks/796acb0c1c9e0f83.js",
+  "static/chunks/21bacc4485f02580.js",
+  "static/chunks/882ab1900913a325.js",
+  "static/chunks/19c17ff626029a6e.js",
+  "static/chunks/turbopack-7fb5da21ed117708.js"
+])

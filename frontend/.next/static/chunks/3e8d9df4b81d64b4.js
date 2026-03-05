@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/landlord", [
+  "static/chunks/a6fd16f29c20eb81.js",
+  "static/chunks/9ffaced44d697e64.js",
+  "static/chunks/21bacc4485f02580.js",
+  "static/chunks/882ab1900913a325.js",
+  "static/chunks/19c17ff626029a6e.js",
+  "static/chunks/turbopack-11d874e8223020c1.js"
+])

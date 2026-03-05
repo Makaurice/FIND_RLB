@@ -58,7 +58,7 @@ hedera = HederaClient(
 )
 
 # optional: check web3 connection
-if w3 and not w3.isConnected():
+if w3 and not w3.is_connected():
     # logging could be added here
     pass
 

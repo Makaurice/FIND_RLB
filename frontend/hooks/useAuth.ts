@@ -17,7 +17,7 @@ interface UseAuthReturn {
   isLoading: boolean;
   isAuthenticated: boolean;
   error: string | null;
-  login: (username: string, password: string) => Promise<void>;
+  login: (username: string, password: string) => Promise<boolean>;
   register: (userData: any) => Promise<void>;
   logout: () => Promise<void>;
   clearError: () => void;

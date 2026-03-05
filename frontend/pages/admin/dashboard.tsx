@@ -234,15 +234,18 @@ export default function AdminDashboard() {
                   </select>
                 </div>
                 <div className="h-64 flex items-end justify-around space-x-2">
-                  {analytics.revenue_trends.slice(-15).map((data, idx) => (
+                  {analytics.revenue_trends.slice(-15).map((data, idx) => {
+                    const value = Number(data[selectedChart as keyof typeof data]) || 0;
+                    return (
                     <div key={idx} className="flex-1 flex flex-col items-center">
                       <div
                         className="w-full bg-gradient-to-t from-blue-500 to-cyan-400 rounded-t transition-all hover:from-blue-400 hover:to-cyan-300 cursor-pointer"
-                        style={{ height: `${(data[selectedChart as keyof typeof data] / 100) * 100}%` }}
+                        style={{ height: `${(value / 100) * 100}%` }}
                       />
                       <span className="text-xs text-slate-400 mt-2 rotate-45 whitespace-nowrap">{data.date}</span>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 

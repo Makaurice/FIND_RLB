@@ -62,14 +62,12 @@ export default function ServiceProviderPortal() {
           {/* Services Grid */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
             {services.map((service) => (
-              <Link key={service.href} href={service.href}>
-                <div className={`bg-gradient-to-br ${service.gradient} p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer text-white`}>
-                  <div className="text-5xl mb-4">{service.icon}</div>
-                  <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-blue-100 mb-4">{service.description}</p>
-                  <div className="flex items-center text-sm font-semibold">
-                    Manage <span className="ml-2">→</span>
-                  </div>
+              <Link key={service.href} href={service.href} className={`bg-gradient-to-br ${service.gradient} p-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 cursor-pointer text-white block`}>
+                <div className="text-5xl mb-4">{service.icon}</div>
+                <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+                <p className="text-blue-100 mb-4">{service.description}</p>
+                <div className="flex items-center text-sm font-semibold">
+                  Manage <span className="ml-2">→</span>
                 </div>
               </Link>
             ))}

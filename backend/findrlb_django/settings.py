@@ -10,12 +10,21 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+from dotenv import load_dotenv
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-aey6h4j&ees#&cchmtux9=ur79d8fvhwt=o&w^n%v$p=0zjh#0'
-DEBUG = True
-ALLOWED_HOSTS = []
+
+# Load environment variables
+load_dotenv(BASE_DIR.parent / '.env')
+
+# Security settings from environment
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-change-this-in-production-2026-hedera')
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -32,6 +41,7 @@ INSTALLED_APPS = [
     'landlord',
     'service',
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -42,7 +52,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 ROOT_URLCONF = 'findrlb_django.urls'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -57,13 +69,23 @@ TEMPLATES = [
         },
     },
 ]
+
 WSGI_APPLICATION = 'findrlb_django.wsgi.application'
+
+# Database configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Static files configuration
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -78,24 +100,19 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
-STATIC_URL = 'static/'
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom User Model
 AUTH_USER_MODEL = 'accounts.User'
 
-# CORS Configuration
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://localhost:5173',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:5173',
-]
+# CORS Configuration from environment
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:3000,http://127.0.0.1:3000').split(',')
 CORS_ALLOW_CREDENTIALS = True
 
 # REST Framework Configuration
@@ -110,17 +127,18 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
-# blockchain configuration (Hedera & Web3)
-import os
-
-WEB3_PROVIDER_URL = os.getenv('WEB3_PROVIDER_URL', 'http://localhost:8545')
+# Blockchain configuration (Hedera & Web3)
+WEB3_PROVIDER_URL = os.getenv('WEB3_PROVIDER', 'https://testnet.hedera.hashgraph.com:8545')
 HEDERA_ACCOUNT_ID = os.getenv('HEDERA_ACCOUNT_ID', '')
 HEDERA_PRIVATE_KEY = os.getenv('HEDERA_PRIVATE_KEY', '')
 HEDERA_NETWORK = os.getenv('HEDERA_NETWORK', 'testnet')
-# optional: store deployed contract IDs
+
+# Deployed contract IDs
 HEDERA_PROPERTYNFT_CONTRACT_ID = os.getenv('HEDERA_PROPERTYNFT_CONTRACT_ID')
 HEDERA_REPUTATION_CONTRACT_ID = os.getenv('HEDERA_REPUTATION_CONTRACT_ID')
 HEDERA_SAVINGSVAULT_CONTRACT_ID = os.getenv('HEDERA_SAVINGSVAULT_CONTRACT_ID')
+HEDERA_LEASEAGREEMENT_CONTRACT_ID = os.getenv('HEDERA_LEASEAGREEMENT_CONTRACT_ID')
+HEDERA_RENTESCROW_CONTRACT_ID = os.getenv('HEDERA_RENTESCROW_CONTRACT_ID')
 
 # JWT Configuration
 from datetime import timedelta
@@ -131,7 +149,7 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
     'ALGORITHM': 'HS256',
-    'SIGNING_KEY': SECRET_KEY,
+    'SIGNING_KEY': os.getenv('JWT_SECRET_KEY', SECRET_KEY),
     'VERIFYING_KEY': None,
     'AUTH_HEADER_TYPES': ('Bearer',),
     'USER_ID_FIELD': 'id',

@@ -178,19 +178,16 @@ class CustomerCareAgent:
 
         # Fallback to keyword matching
         message_lower = message.lower()
-        print(f"Debug: message_lower = {message_lower}")
+        # Clean punctuation from message
+        import re
+        message_clean = re.sub(r'[^\w\s]', '', message_lower)
+        message_words = set(message_clean.split())
         for category, data in self.knowledge_base.items():
-            print(f"Debug: checking category {category}")
             # Check if any question phrase has its words in the message
             for question in data["questions"]:
-                print(f"Debug: checking question '{question}'")
                 question_words = set(question.lower().split())
-                message_words = set(message_lower.split())
-                print(f"Debug: question_words = {question_words}, message_words = {message_words}")
                 if question_words.issubset(message_words):
-                    print(f"Debug: match found for {category}")
                     return category
-        print("Debug: no match, returning general")
         return "general"
 
     def _extract_entities(self, message):

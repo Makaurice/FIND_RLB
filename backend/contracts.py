@@ -1,66 +1,111 @@
 # contracts.py - Backend integration for all Hedera/Ethereum contracts
 from web3 import Web3
-from django.conf import settings
-from backend.hedera_integration import HederaClient
+import os
+from backend.hedera_integration_v2 import HederaClient
 
-# Replace with actual ABIs and deployed addresses/IDs after deployment
+# Contract configurations - Update with actual deployed addresses and ABIs
 CONTRACTS = {
     'PropertyNFT': {
-        'abi': [...],
-        'address': '0xPropertyNFT...',
-        'hedera_id': getattr(settings, 'HEDERA_PROPERTYNFT_CONTRACT_ID', None),
+        'abi': [
+            {"inputs":[{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"symbol","type":"string"}],"stateMutability":"nonpayable","type":"constructor"},
+            {"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"owner","type":"address"},{"indexed":True,"internalType":"address","name":"approved","type":"address"},{"indexed":True,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},
+            {"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"owner","type":"address"},{"indexed":True,"internalType":"address","name":"operator","type":"address"},{"indexed":False,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},
+            {"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"from","type":"address"},{"indexed":True,"internalType":"address","name":"to","type":"address"},{"indexed":True,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},
+            {"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},
+            {"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"_approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},
+            {"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"string","name":"tokenURI","type":"string"}],"name":"mint","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"nonpayable","type":"function"}
+        ],
+        'address': '0x0000000000000000000000000000000000000000',  # Replace with deployed address
+        'hedera_id': os.getenv('HEDERA_PROPERTYNFT_CONTRACT_ID'),
     },
     'LeaseAgreement': {
-        'abi': [...],
-        'address': '0xLeaseAgreement...',
-        'hedera_id': getattr(settings, 'HEDERA_LEASEAGREEMENT_CONTRACT_ID', None),
+        'abi': [
+            {"inputs":[{"internalType":"address","name":"_propertyNFT","type":"address"},{"internalType":"address","name":"_rentEscrow","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},
+            {"anonymous":False,"inputs":[{"indexed":False,"internalType":"uint256","name":"leaseId","type":"uint256"},{"indexed":True,"internalType":"address","name":"tenant","type":"address"},{"indexed":True,"internalType":"uint256","name":"propertyId","type":"uint256"}],"name":"LeaseCreated","type":"event"},
+            {"inputs":[],"name":"leaseCount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"leases","outputs":[{"internalType":"uint256","name":"propertyId","type":"uint256"},{"internalType":"address","name":"tenant","type":"address"},{"internalType":"address","name":"landlord","type":"address"},{"internalType":"uint256","name":"monthlyRent","type":"uint256"},{"internalType":"uint256","name":"startDate","type":"uint256"},{"internalType":"uint256","name":"endDate","type":"uint256"},{"internalType":"bool","name":"isActive","type":"bool"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"_propertyId","type":"uint256"},{"internalType":"address","name":"_tenant","type":"address"},{"internalType":"uint256","name":"_monthlyRent","type":"uint256"},{"internalType":"uint256","name":"_durationMonths","type":"uint256"}],"name":"createLease","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"_leaseId","type":"uint256"}],"name":"terminateLease","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"_leaseId","type":"uint256"}],"name":"getLeaseDetails","outputs":[{"internalType":"uint256","name":"propertyId","type":"uint256"},{"internalType":"address","name":"tenant","type":"address"},{"internalType":"address","name":"landlord","type":"address"},{"internalType":"uint256","name":"monthlyRent","type":"uint256"},{"internalType":"uint256","name":"startDate","type":"uint256"},{"internalType":"uint256","name":"endDate","type":"uint256"},{"internalType":"bool","name":"isActive","type":"bool"}],"stateMutability":"view","type":"function"}
+        ],
+        'address': '0x0000000000000000000000000000000000000000',  # Replace with deployed address
+        'hedera_id': os.getenv('HEDERA_LEASEAGREEMENT_CONTRACT_ID'),
     },
     'RentEscrow': {
-        'abi': [...],
-        'address': '0xRentEscrow...',
-        'hedera_id': getattr(settings, 'HEDERA_RENTESCROW_CONTRACT_ID', None),
+        'abi': [
+            {"inputs":[{"internalType":"address","name":"_findToken","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},
+            {"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"tenant","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"},{"indexed":False,"internalType":"uint256","name":"timestamp","type":"uint256"}],"name":"PaymentReceived","type":"event"},
+            {"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"escrowedFunds","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_tenant","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"depositRent","outputs":[],"stateMutability":"payable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_landlord","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"releaseRent","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_tenant","type":"address"}],"name":"getEscrowedAmount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_tenant","type":"address"}],"name":"refundTenant","outputs":[],"stateMutability":"nonpayable","type":"function"}
+        ],
+        'address': '0x0000000000000000000000000000000000000000',  # Replace with deployed address
+        'hedera_id': os.getenv('HEDERA_RENTESCROW_CONTRACT_ID'),
     },
     'SavingsVault': {
-        'abi': [...],
-        'address': '0xSavingsVault...',
-        'hedera_id': getattr(settings, 'HEDERA_SAVINGSVAULT_CONTRACT_ID', None),
-    },
-    'ThirdPartyPayment': {
-        'abi': [...],
-        'address': '0xThirdPartyPayment...',
-        'hedera_id': getattr(settings, 'HEDERA_THIRDPARTYPAYMENT_CONTRACT_ID', None),
+        'abi': [
+            {"inputs":[{"internalType":"address","name":"_findToken","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},
+            {"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"user","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Deposit","type":"event"},
+            {"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"user","type":"address"},{"indexed":False,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdrawal","type":"event"},
+            {"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"balances","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"getBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}
+        ],
+        'address': '0x0000000000000000000000000000000000000000',  # Replace with deployed address
+        'hedera_id': os.getenv('HEDERA_SAVINGSVAULT_CONTRACT_ID'),
     },
     'Reputation': {
-        'abi': [...],
-        'address': '0xReputation...',
-        'hedera_id': getattr(settings, 'HEDERA_REPUTATION_CONTRACT_ID', None),
+        'abi': [
+            {"inputs":[],"stateMutability":"nonpayable","type":"constructor"},
+            {"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"user","type":"address"},{"indexed":False,"internalType":"uint256","name":"score","type":"uint256"}],"name":"ReputationUpdated","type":"event"},
+            {"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"reputations","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_user","type":"address"},{"internalType":"uint256","name":"_score","type":"uint256"}],"name":"updateReputation","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"getReputation","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}
+        ],
+        'address': '0x0000000000000000000000000000000000000000',  # Replace with deployed address
+        'hedera_id': os.getenv('HEDERA_REPUTATION_CONTRACT_ID'),
     },
     'P2PCommunity': {
-        'abi': [...],
-        'address': '0xP2PCommunity...',
-        'hedera_id': getattr(settings, 'HEDERA_P2PCOMMUNITY_CONTRACT_ID', None),
-    },
-    'MovingService': {
-        'abi': [...],
-        'address': '0xMovingService...',
-        'hedera_id': getattr(settings, 'HEDERA_MOVINGSERVICE_CONTRACT_ID', None),
+        'abi': [
+            {"inputs":[],"stateMutability":"nonpayable","type":"constructor"},
+            {"anonymous":False,"inputs":[{"indexed":True,"internalType":"address","name":"user","type":"address"},{"indexed":False,"internalType":"string","name":"userType","type":"string"}],"name":"UserRegistered","type":"event"},
+            {"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"string","name":"userType","type":"string"},{"internalType":"uint256","name":"reputation","type":"uint256"},{"internalType":"bool","name":"isActive","type":"bool"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_user","type":"address"},{"internalType":"string","name":"_userType","type":"string"}],"name":"registerUser","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"_user","type":"address"}],"name":"getUserInfo","outputs":[{"internalType":"string","name":"userType","type":"string"},{"internalType":"uint256","name":"reputation","type":"uint256"},{"internalType":"bool","name":"isActive","type":"bool"}],"stateMutability":"view","type":"function"}
+        ],
+        'address': '0x0000000000000000000000000000000000000000',  # Replace with deployed address
+        'hedera_id': os.getenv('HEDERA_P2PCOMMUNITY_CONTRACT_ID'),
     },
 }
 
-# initialize web3 provider (HTTP or WS) from Django settings
-w3 = Web3(Web3.HTTPProvider(getattr(settings, 'WEB3_PROVIDER_URL', 'http://localhost:8545')))
+# initialize web3 provider (HTTP or WS) from environment variables
+w3 = Web3(Web3.HTTPProvider(os.getenv('WEB3_PROVIDER_URL', 'http://localhost:8545')))
 
 # hedra client for on-chain functionality
 hedera = HederaClient(
-    account_id=getattr(settings, 'HEDERA_ACCOUNT_ID', None),
-    private_key=getattr(settings, 'HEDERA_PRIVATE_KEY', None),
-    network=getattr(settings, 'HEDERA_NETWORK', 'testnet'),
+    account_id=os.getenv('HEDERA_ACCOUNT_ID'),
+    private_key=os.getenv('HEDERA_PRIVATE_KEY'),
+    network=os.getenv('HEDERA_NETWORK', 'testnet'),
 )
 
-# optional: check web3 connection
-if w3 and not w3.is_connected():
-    # logging could be added here
-    pass
+# optional: check web3 connection (only when called)
+# if w3 and not w3.is_connected():
+#     # logging could be added here
+#     pass
 
 
 def get_contract(name):

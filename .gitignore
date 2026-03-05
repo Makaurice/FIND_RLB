@@ -12,6 +12,9 @@ env/
 # Django database
 db.sqlite3
 
+# Environment variables
+.env
+
 # Editor configs
 .vscode/
 .idea/

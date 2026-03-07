@@ -9,6 +9,10 @@ P2P Community & Referral System
 from typing import Optional, Dict, Any, List
 from datetime import datetime
 
+from service.events import log_user_event
+from service.models import UserEvent
+
+
 class CommunityService:
     """Manages P2P community interactions and referrals."""
     
@@ -27,6 +31,14 @@ class CommunityService:
         """Register an on-time payment for trust calculation."""
         if timestamp is None:
             timestamp = datetime.now().isoformat()
+
+        # Persist event for analytics / scoring
+        log_user_event(
+            user_id,
+            event_type='payment_on_time',
+            metadata={'amount': amount, 'timestamp': timestamp},
+        )
+
         self.payment_records.setdefault(user_id, []).append({
             'amount': amount,
             'timestamp': timestamp,
@@ -61,6 +73,14 @@ class CommunityService:
         }
         
         self.referrals[referrer_id].append(referral)
+
+        # Persist event for analytics / scoring
+        log_user_event(
+            referrer_id,
+            event_type='referral_submitted',
+            metadata={'referred_user_id': referred_user_id, 'referral_code': referral_code},
+        )
+
         return referral
 
     def claim_referral_reward(self, referrer_id: str, referred_user_id: str) -> Dict[str, Any]:
@@ -74,6 +94,13 @@ class CommunityService:
             if referral['referredUserId'] == referred_user_id and referral['status'] == 'PENDING':
                 referral['status'] = 'COMPLETED'
                 referral['claimedAt'] = datetime.now().isoformat()
+
+                # Persist event for analytics/scoring
+                log_user_event(
+                    referrer_id,
+                    event_type='referral_completed',
+                    metadata={'referred_user_id': referred_user_id},
+                )
                 
                 return {
                     'referrerId': referrer_id,
@@ -143,6 +170,17 @@ class CommunityService:
         
         self.reviews[target_user_id].append(review)
         self.ratings[target_user_id].append(rating)
+
+        # Persist event for analytics / scoring
+        log_user_event(
+            reviewer_id,
+            event_type='review_submitted',
+            metadata={
+                'target_user_id': target_user_id,
+                'rating': rating,
+                'comment': comment,
+            },
+        )
         
         return review
 
@@ -229,31 +267,59 @@ class CommunityService:
             return {'error': f'Unknown category: {category}'}
 
     def get_trust_score(self, user_id: str) -> Dict[str, Any]:
-        """
-        Calculate a holistic trust score based on:
+        """Calculate a holistic trust score based on:
         - Payment history
         - Reviews
         - Referrals
         - Reputation
+
+        This uses both in-memory records and persisted UserEvent logs.
         """
+        # --- Rating score (0-100) ---
+        #  - In-memory ratings (from submit_review)
+        #  - Persisted review events (metadata.target_user_id)
+        ratings: List[float] = []
+        if user_id in self.ratings:
+            ratings.extend(self.ratings[user_id])
+
+        review_events = UserEvent.objects.filter(
+            event_type='review_submitted',
+            metadata__target_user_id=user_id,
+        )
+        for ev in review_events:
+            rating = ev.metadata.get('rating')
+            if isinstance(rating, (int, float)):
+                ratings.append(float(rating))
+
         rating_score = 0.0
-        if user_id in self.ratings and self.ratings[user_id]:
-            rating_score = (sum(self.ratings[user_id]) / len(self.ratings[user_id])) * 20
-        
-        referral_score = 0.0
+        if ratings:
+            rating_score = (sum(ratings) / len(ratings)) * 20  # scale to 0-100
+
+        # --- Referral score (max 20) ---
+        completed_referrals = 0
         if user_id in self.referrals:
-            completed = len([r for r in self.referrals[user_id] if r['status'] == 'COMPLETED'])
-            referral_score = min(completed * 5, 20)  # Max 20 points
-        
-        # Payment history: each on‑time payment adds 1 point, max 30
-        payments = self.payment_records.get(user_id, [])
-        payment_score = min(len(payments), 30)
-        # Reputation score: normalized to 30 points (assuming 0-100 range)
+            completed_referrals += len([r for r in self.referrals[user_id] if r['status'] == 'COMPLETED'])
+
+        completed_referrals += UserEvent.objects.filter(
+            event_type='referral_completed',
+            user__id=user_id,
+        ).count()
+
+        referral_score = min(completed_referrals * 5, 20)
+
+        # --- Payment score (max 30) ---
+        payment_score = min(
+            len(self.payment_records.get(user_id, [])) +
+            UserEvent.objects.filter(event_type='payment_on_time', user__id=user_id).count(),
+            30,
+        )
+
+        # --- Reputation score (max 30) ---
         rep = self.reputation_scores.get(user_id, 50)
         reputation_score = min(max(rep, 0), 100) * 0.30
-        
+
         total_trust = rating_score + referral_score + payment_score + reputation_score
-        
+
         return {
             'userId': user_id,
             'trustScore': round(total_trust, 2),

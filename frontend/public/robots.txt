@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+# If you have a staging environment, disallow it by setting:
+# Disallow: /
+
+Sitemap: /sitemap.xml

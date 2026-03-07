@@ -17,15 +17,22 @@ import json
 try:
     from hedera import (
         Client, PrivateKey, PublicKey, AccountId,
-        Hbar, HbarUnit, TransactionId, Timestamp,
+        Hbar, HbarUnit, TransactionId,
         ContractId, TokenId,
-        TransferTransaction, TokenTransferTransaction,
+        TransferTransaction, TokenTransfer,  # Updated class names
         ContractExecuteTransaction, ContractCallQuery,
         TokenCreateTransaction, TokenAssociateTransaction,
+        ContractCreateTransaction, ContractFunctionParameters,
+        JInstant,  # Using JInstant instead of Timestamp
     )
     HEDERA_AVAILABLE = True
-except ImportError:
+    print("✅ Hedera SDK imported successfully")
+except ImportError as e:
     HEDERA_AVAILABLE = False
+    print(f"⚠️  Hedera SDK not available - using mock mode: {e}")
+    import os
+    print(f"JAVA_HOME: {os.environ.get('JAVA_HOME')}")
+    print(f"PATH contains java: {'java' in os.environ.get('PATH', '').lower()}")
 
 
 class HederaClient:

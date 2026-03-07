@@ -29,4 +29,7 @@ export const API_ENDPOINTS = {
   SERVICE_MAINTENANCE: `${API_BASE_URL}/api/service/maintenance/`,
   SERVICE_STORAGE: `${API_BASE_URL}/api/service/storage/`,
   SERVICE_INVENTORY: `${API_BASE_URL}/api/service/inventory/`,
+
+  // Recommendations
+  RECOMMENDATIONS: `${API_BASE_URL}/api/recommendations/`,
 };

@@ -42,7 +42,9 @@ urlpatterns = [
     # App URLs
     path('api/auth/', include('accounts.urls')),
     path('api/properties/', include('property.urls')),
-    
+    path('api/search/', include('api.urls_search')),
+    path('api/recommendations/', include('api.urls_recommendations')),
+
     # Commented out for now - can be enabled as modules are completed
     # path('api/tenant/', include('tenant.urls')),
     # path('api/landlord/', include('landlord.urls')),
@@ -51,9 +53,5 @@ urlpatterns = [
     # path('api/token/', include('api.urls_token')),
     # path('api/ai-agents/', include('api.urls_ai_agents')),
     # path('api/wallet/', include('api.urls_wallet')),
-    # path('api/search/', include('api.urls_search')),
-    # path('api/community/', include('api.urls_community')),
-    # path('api/p2p/', include('api.urls_p2p_community')),
-    # path('api/rewards/', include('api.urls_rewards')),
 ]
 

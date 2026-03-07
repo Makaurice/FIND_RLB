@@ -1,176 +1,182 @@
 {
-  "passed": 22,
-  "failed": 6,
-  "total": 28,
-  "timestamp": "2026-03-05T23:58:51.719045",
+  "passed": 24,
+  "failed": 5,
+  "total": 29,
+  "timestamp": "2026-03-06T17:56:27.935356",
   "results": {
     ".env File": {
       "status": true,
       "message": "Found",
       "data": {},
-      "timestamp": "2026-03-05T23:58:45.691362"
+      "timestamp": "2026-03-06T17:55:49.498357"
     },
     "HEDERA_ACCOUNT_ID": {
       "status": true,
       "message": "Set to 0.0.7974203",
       "data": {},
-      "timestamp": "2026-03-05T23:58:46.022454"
+      "timestamp": "2026-03-06T17:55:49.718237"
     },
     "HEDERA_PRIVATE_KEY": {
       "status": true,
-      "message": "Set (3b980fa28f...447a)",
+      "message": "Set (302e020100...447a)",
       "data": {},
-      "timestamp": "2026-03-05T23:58:46.022620"
+      "timestamp": "2026-03-06T17:55:49.718462"
     },
     "HEDERA_NETWORK": {
       "status": true,
       "message": "Set to testnet",
       "data": {},
-      "timestamp": "2026-03-05T23:58:46.022831"
+      "timestamp": "2026-03-06T17:55:49.718986"
     },
     "Import Django Framework": {
       "status": true,
       "message": "Available",
       "data": {},
-      "timestamp": "2026-03-05T23:58:46.040916"
+      "timestamp": "2026-03-06T17:55:49.907090"
     },
     "Import Django REST Framework": {
       "status": true,
       "message": "Available",
       "data": {},
-      "timestamp": "2026-03-05T23:58:46.043839"
+      "timestamp": "2026-03-06T17:55:49.977386"
     },
     "Import Web3 Library": {
       "status": true,
       "message": "Available",
       "data": {},
-      "timestamp": "2026-03-05T23:58:49.114069"
+      "timestamp": "2026-03-06T17:56:10.455115"
     },
     "Import Python-dotenv": {
       "status": true,
       "message": "Available",
       "data": {},
-      "timestamp": "2026-03-05T23:58:49.114226"
+      "timestamp": "2026-03-06T17:56:10.456431"
     },
     "Import Cryptography": {
-      "status": true,
-      "message": "Available",
+      "status": false,
+      "message": "No module named 'cryptography'",
       "data": {},
-      "timestamp": "2026-03-05T23:58:49.117952"
+      "timestamp": "2026-03-06T17:56:10.462206"
     },
     "Hedera Client Init": {
-      "status": false,
-      "message": "JVM exception occurred: java.lang.UnsupportedClassVersionError: com/hedera/hashgraph/sdk/AbstractTokenTransferTransaction has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 52.0\njava.lang.UnsupportedClassVersionError: com/hedera/hashgraph/sdk/AbstractTokenTransferTransaction has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 52.0\n\tjava.lang.ClassLoader.defineClass1(Native Method)\n\tjava.lang.ClassLoader.defineClass(Unknown Source)\n\tjava.security.SecureClassLoader.defineClass(Unknown Source)\n\tjava.net.URLClassLoader.defineClass(Unknown Source)\n\tjava.net.URLClassLoader.access$100(Unknown Source)\n\tjava.net.URLClassLoader$1.run(Unknown Source)\n\tjava.net.URLClassLoader$1.run(Unknown Source)\n\tjava.security.AccessController.doPrivileged(Native Method)\n\tjava.net.URLClassLoader.findClass(Unknown Source)\n\tjava.lang.ClassLoader.loadClass(Unknown Source)\n\tsun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)\n\tjava.lang.ClassLoader.loadClass(Unknown Source)",
+      "status": true,
+      "message": "Initialized successfully",
       "data": {},
-      "timestamp": "2026-03-05T23:58:50.475203"
+      "timestamp": "2026-03-06T17:56:13.760754"
+    },
+    "Hedera Network Connection": {
+      "status": false,
+      "message": "Client not fully initialized (SDK may not be fully installed)",
+      "data": {},
+      "timestamp": "2026-03-06T17:56:13.761152"
     },
     "Django Setup": {
       "status": true,
       "message": "Configured",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.649592"
+      "timestamp": "2026-03-06T17:56:27.712010"
     },
     "Database Connection": {
       "status": true,
       "message": "Connected",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.649935"
+      "timestamp": "2026-03-06T17:56:27.713493"
     },
     "Module Matching Engine": {
       "status": false,
-      "message": "JVM exception occurred: java.lang.UnsupportedClassVersionError: com/hedera/hashg",
+      "message": "No module named 'sklearn'",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.661363"
+      "timestamp": "2026-03-06T17:56:27.804121"
     },
     "Module Landlord Agent": {
       "status": false,
-      "message": "JVM exception occurred: java.lang.UnsupportedClassVersionError: com/hedera/hashg",
+      "message": "No module named 'sklearn'",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.669788"
+      "timestamp": "2026-03-06T17:56:27.828812"
     },
     "Module Tenant Agent": {
       "status": false,
-      "message": "JVM exception occurred: java.lang.UnsupportedClassVersionError: com/hedera/hashg",
+      "message": "No module named 'sklearn'",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.678312"
+      "timestamp": "2026-03-06T17:56:27.865825"
     },
     "Module P2P Community Agent": {
-      "status": false,
-      "message": "JVM exception occurred: java.lang.UnsupportedClassVersionError: com/hedera/hashg",
+      "status": true,
+      "message": "Importable",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.690366"
+      "timestamp": "2026-03-06T17:56:27.896427"
     },
     "Module Savings-to-Own Agent": {
-      "status": false,
-      "message": "JVM exception occurred: java.lang.UnsupportedClassVersionError: com/hedera/hashg",
+      "status": true,
+      "message": "Importable",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.703162"
+      "timestamp": "2026-03-06T17:56:27.909732"
     },
     "Contract PropertyNFT.sol": {
       "status": true,
       "message": "Found (7328 bytes)",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.705069"
+      "timestamp": "2026-03-06T17:56:27.911567"
     },
     "Contract LeaseAgreement.sol": {
       "status": true,
       "message": "Found (6644 bytes)",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.705981"
+      "timestamp": "2026-03-06T17:56:27.923914"
     },
     "Contract RentEscrow.sol": {
       "status": true,
       "message": "Found (5157 bytes)",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.706478"
+      "timestamp": "2026-03-06T17:56:27.924734"
     },
     "Contract Reputation.sol": {
       "status": true,
       "message": "Found (3725 bytes)",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.706986"
+      "timestamp": "2026-03-06T17:56:27.925689"
     },
     "Contract SavingsVault.sol": {
       "status": true,
       "message": "Found (5440 bytes)",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.707492"
+      "timestamp": "2026-03-06T17:56:27.926765"
     },
     "AI Agent API": {
       "status": true,
       "message": "Found",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.708958"
+      "timestamp": "2026-03-06T17:56:27.928179"
     },
     "Hedera Integration API": {
       "status": true,
       "message": "Found",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.709319"
+      "timestamp": "2026-03-06T17:56:27.928627"
     },
     "Next.js Config": {
       "status": true,
       "message": "Configured",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.710773"
+      "timestamp": "2026-03-06T17:56:27.930462"
     },
     "TypeScript Config": {
       "status": true,
       "message": "Configured",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.711396"
+      "timestamp": "2026-03-06T17:56:27.931000"
     },
     "Dependencies": {
       "status": true,
       "message": "Configured",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.714798"
+      "timestamp": "2026-03-06T17:56:27.931788"
     },
     ".env in .gitignore": {
       "status": true,
       "message": "Protected from version control",
       "data": {},
-      "timestamp": "2026-03-05T23:58:51.716879"
+      "timestamp": "2026-03-06T17:56:27.933516"
     }
   }
 }

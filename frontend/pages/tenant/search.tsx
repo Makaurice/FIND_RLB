@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { propertiesAPI } from '../../services/api';
+import { propertiesAPI, tenantAPI } from '../../services/api';
 import { ProtectedPage } from '../../components/ProtectedPage';
 
 export default function PropertySearch() {
@@ -10,9 +10,9 @@ export default function PropertySearch() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Load properties on mount
+  // Load properties (and attempt personalized recommendations) on mount
   useEffect(() => {
-    loadProperties();
+    loadRecommendations();
   }, []);
 
   const loadProperties = async () => {
@@ -24,6 +24,21 @@ export default function PropertySearch() {
     } else {
       setError(response.error || 'Failed to load properties');
     }
+    setLoading(false);
+  };
+
+  const loadRecommendations = async () => {
+    setLoading(true);
+    setError('');
+
+    const response = await tenantAPI.getRecommendations();
+    if (response.success && Array.isArray(response.data?.recommended)) {
+      setResults(response.data.recommended);
+    } else {
+      // Fallback to generic property list
+      await loadProperties();
+    }
+
     setLoading(false);
   };
 

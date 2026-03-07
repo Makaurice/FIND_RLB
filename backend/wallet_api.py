@@ -5,6 +5,10 @@ from rest_framework.permissions import IsAuthenticated
 from wallet_service import WalletService
 from datetime import datetime
 
+from community_service import CommunityService
+
+community_service = CommunityService()
+
 class WalletBalanceView(APIView):
     """Get user wallet balances."""
     permission_classes = [IsAuthenticated]
@@ -74,6 +78,10 @@ class DepositView(APIView):
             
             wallet = WalletService(str(user_id))
             result = wallet.deposit_from_bank(float(amount), bank)
+
+            # Record a payment event for trust scoring
+            community_service.record_payment(str(user_id), float(amount))
+
             return Response(result, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -270,6 +270,10 @@ export const tenantAPI = {
       true
     );
   },
+
+  getRecommendations: async (): Promise<ApiResponse> => {
+    return apiCall(API_ENDPOINTS.RECOMMENDATIONS, { method: 'GET' }, true);
+  },
 };
 
 // Landlord API calls

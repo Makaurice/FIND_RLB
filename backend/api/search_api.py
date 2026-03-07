@@ -92,4 +92,24 @@ class PropertySearchView(APIView):
             reverse = (order == 'desc')
             results = sorted(results, key=lambda x: x.get(sort_by, 0), reverse=reverse)
 
+        # Log the search event for personalization and analytics
+        try:
+            from service.events import log_user_event
+
+            metadata = {
+                'price_min': price_min,
+                'price_max': price_max,
+                'beds': beds,
+                'property_type': property_type,
+                'location': location,
+                'sort_by': sort_by,
+                'order': order,
+                'result_count': len(results),
+                'result_ids': [p.get('id') for p in results[:20]],
+            }
+            log_user_event(request.user if request.user and request.user.is_authenticated else None, 'property_search', metadata=metadata)
+        except Exception:
+            # Fire-and-forget logging; do not block search on analytics failures.
+            pass
+
         return Response(results)

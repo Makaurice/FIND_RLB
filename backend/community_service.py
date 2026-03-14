@@ -11,6 +11,7 @@ from datetime import datetime
 
 from service.events import log_user_event
 from service.models import UserEvent
+from tenant.models import Payment, Review
 
 
 class CommunityService:
@@ -276,20 +277,22 @@ class CommunityService:
         This uses both in-memory records and persisted UserEvent logs.
         """
         # --- Rating score (0-100) ---
-        #  - In-memory ratings (from submit_review)
-        #  - Persisted review events (metadata.target_user_id)
+        #  - Persisted Review records
+        #  - Optional event log fallback
         ratings: List[float] = []
-        if user_id in self.ratings:
-            ratings.extend(self.ratings[user_id])
 
-        review_events = UserEvent.objects.filter(
-            event_type='review_submitted',
-            metadata__target_user_id=user_id,
-        )
-        for ev in review_events:
-            rating = ev.metadata.get('rating')
-            if isinstance(rating, (int, float)):
-                ratings.append(float(rating))
+        reviews = Review.objects.filter(target_user_id=user_id)
+        ratings.extend([float(r.rating) for r in reviews if r.rating is not None])
+
+        if not ratings:
+            review_events = UserEvent.objects.filter(
+                event_type='review_submitted',
+                metadata__target_user_id=user_id,
+            )
+            for ev in review_events:
+                rating = ev.metadata.get('rating')
+                if isinstance(rating, (int, float)):
+                    ratings.append(float(rating))
 
         rating_score = 0.0
         if ratings:
@@ -308,11 +311,18 @@ class CommunityService:
         referral_score = min(completed_referrals * 5, 20)
 
         # --- Payment score (max 30) ---
-        payment_score = min(
-            len(self.payment_records.get(user_id, [])) +
-            UserEvent.objects.filter(event_type='payment_on_time', user__id=user_id).count(),
-            30,
-        )
+        # Use persisted payment records first, then fall back to event logs.
+        paid_payments = Payment.objects.filter(
+            lease__tenant_id=user_id,
+            status='paid',
+        ).count()
+
+        payment_events = UserEvent.objects.filter(
+            event_type='rent_payment',
+            user__id=user_id,
+        ).count()
+
+        payment_score = min(paid_payments + payment_events, 30)
 
         # --- Reputation score (max 30) ---
         rep = self.reputation_scores.get(user_id, 50)

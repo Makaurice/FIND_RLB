@@ -46,7 +46,7 @@ urlpatterns = [
     path('api/recommendations/', include('api.urls_recommendations')),
 
     # Commented out for now - can be enabled as modules are completed
-    # path('api/tenant/', include('tenant.urls')),
+    path('api/tenant/', include('tenant.urls')),
     # path('api/landlord/', include('landlord.urls')),
     # path('api/service/', include('service.urls')),
     # path('api/contracts/', include('api.urls_contracts')),

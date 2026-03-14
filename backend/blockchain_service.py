@@ -175,38 +175,72 @@ class BlockchainService:
     # ========== REPUTATION SYSTEM ==========
     
     def update_reputation(self, user_id: str, reputation_score: int) -> bool:
-        """
-        Update user reputation on-chain
-        
-        Args:
-            user_id: User account
-            reputation_score: New reputation score
-            
-        Returns:
-            True if successful
+        """Update user reputation on-chain.
+
+        This method exists for backward compatibility and updates an overall
+        reputation value if the contract supports it.
         """
         if not self.is_available:
             return False
-        
+
         try:
             contract_id = os.getenv('HEDERA_REPUTATION_CONTRACT_ID')
             if not contract_id:
                 print("❌ Reputation contract not configured")
                 return False
-            
+
             params = ContractFunctionParameters()
             params.add_address(user_id)
             params.add_uint256(reputation_score)
-            
+
             return self.executor.execute_payable_function(
                 contract_id=contract_id,
                 function_name="updateReputation",
                 amount_hbar=0.001,
                 params=params
             )
-            
+
         except Exception as e:
             print(f"❌ Reputation update failed: {e}")
+            return False
+
+    def update_reputation_components(
+        self,
+        user_id: str,
+        payment_consistency: int,
+        lease_completion_rate: int,
+        reviews_score: int,
+    ) -> bool:
+        """Update detailed reputation components on-chain."""
+        if not self.is_available:
+            return False
+
+        try:
+            contract_id = os.getenv('HEDERA_REPUTATION_CONTRACT_ID')
+            if not contract_id:
+                print("❌ Reputation contract not configured")
+                return False
+
+            # Update each component (assuming the contract supports each call)
+            for fn, value in [
+                ("updatePaymentConsistency", payment_consistency),
+                ("updateLeaseCompletionRate", lease_completion_rate),
+                ("updateReviewsScore", reviews_score),
+            ]:
+                params = ContractFunctionParameters()
+                params.add_address(user_id)
+                params.add_uint256(int(value))
+                self.executor.execute_payable_function(
+                    contract_id=contract_id,
+                    function_name=fn,
+                    amount_hbar=0.0005,
+                    params=params,
+                )
+
+            return True
+
+        except Exception as e:
+            print(f"❌ Reputation component update failed: {e}")
             return False
     
     def get_reputation(self, user_id: str) -> Optional[int]:

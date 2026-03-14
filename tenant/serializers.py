@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from tenant.models import TenantProfile, Lease, Payment
+from tenant.models import TenantProfile, Lease, Payment, Review
 
 
 class TenantProfileSerializer(serializers.ModelSerializer):
@@ -50,4 +50,19 @@ class PaymentSerializer(serializers.ModelSerializer):
             'method',
             'created_at',
             'updated_at',
+        ]
+
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = [
+            'id',
+            'reviewer',
+            'target_user',
+            'rating',
+            'comment',
+            'helpful',
+            'unhelpful',
+            'created_at',
         ]
